@@ -1,7 +1,7 @@
 const getAllDriversController = async () => {
     const query = `
-        MATCH (d:Driver)
-        RETURN d
+        MATCH (d:Driver)-[r:DrivesFor]->(t:Team)
+        RETURN d,t
     `;
     logRGQuery(query);
     const queryResult = await graph.query(query);
@@ -9,7 +9,9 @@ const getAllDriversController = async () => {
     const drivers = [];
 
     queryResult._results.forEach(driver => {
-        drivers.push(driver._values[0]?.properties);
+        const driverWithTeam = driver._values[0]?.properties;
+        driverWithTeam.team = driver._values[1]?.properties;
+        drivers.push(driverWithTeam);
     });
     return drivers;
 };

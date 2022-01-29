@@ -49,7 +49,7 @@ export const getAllDriversSchema = {
         response: {
             200: {
                 type: "array",
-                items: Driver
+                items: DriverWithTeam
             }
         }
     },

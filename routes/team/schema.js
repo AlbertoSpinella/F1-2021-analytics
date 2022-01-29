@@ -67,7 +67,7 @@ export const getTeamSchema = {
     schema: {
         tags: ["TEAM"],
         response: {
-            200: Team
+            200: TeamWithDrivers
         }
     },
     handler: getTeamService

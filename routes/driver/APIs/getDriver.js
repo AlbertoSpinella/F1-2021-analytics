@@ -18,6 +18,5 @@ const getDriverController = async (driverID) => {
 export const getDriverService = async (req, res) => {
     const { params: { driverID } } = req;
     const result = await getDriverController(driverID);
-    console.log("AAA", result);
     return res.send(result);
 };
