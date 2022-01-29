@@ -1,0 +1,13 @@
+### createTeam
+POST http://localhost:3000/team HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Ferrari",
+  "colors": {
+    "primary": "red",
+    "secondary": "black"
+  },
+  "nationality": "ita",
+  "teamPrincipal": "Binotto"
+}
