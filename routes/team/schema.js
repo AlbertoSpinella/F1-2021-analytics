@@ -3,6 +3,18 @@ import { getAllTeamsService } from "./APIs/getAllTeams.js";
 import { getTeamService } from "./APIs/getTeam.js";
 import { deleteTeamService } from "./APIs/deleteTeam.js";
 
+const Team = {
+    type: "object",
+    required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal"],
+    properties: {
+        name: { type: "string" },
+        primaryColor: { type: "string" },
+        secondaryColor: { type: "string" },
+        nationality: { type: "string" },
+        teamPrincipal: { type: "string" }
+    }
+};
+
 export const createTeamSchema = {
     schema: {
         tags: ["TEAM"],
@@ -26,17 +38,7 @@ export const createTeamSchema = {
             additionalProperties: false
         },
         response: {
-            200: {
-                type: "object",
-                required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal"],
-                properties: {
-                    name: { type: "string" },
-                    primaryColor: { type: "string" },
-                    secondaryColor: { type: "string" },
-                    nationality: { type: "string" },
-                    teamPrincipal: { type: "string" }
-                }
-            }
+            200: Team
         }
     },
     handler: createTeamService
@@ -48,17 +50,7 @@ export const getAllTeamsSchema = {
         response: {
             200: {
                 type: "array",
-                items: {
-                    type: "object",
-                    required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal"],
-                    properties: {
-                        name: { type: "string" },
-                        primaryColor: { type: "string" },
-                        secondaryColor: { type: "string" },
-                        nationality: { type: "string" },
-                        teamPrincipal: { type: "string" }
-                    }
-                }
+                items: Team
             }
         }
     },
@@ -69,17 +61,7 @@ export const getTeamSchema = {
     schema: {
         tags: ["TEAM"],
         response: {
-            200: {
-                type: "object",
-                required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal"],
-                properties: {
-                    name: { type: "string" },
-                    primaryColor: { type: "string" },
-                    secondaryColor: { type: "string" },
-                    nationality: { type: "string" },
-                    teamPrincipal: { type: "string" }
-                }
-            }
+            200: Team
         }
     },
     handler: getTeamService

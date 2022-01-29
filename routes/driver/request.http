@@ -1,0 +1,25 @@
+### createDriver
+POST http://localhost:3000/driver HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Charles",
+  "surname": "Leclerc",
+  "number": 16,
+  "nationality": "mon",
+  "isFirstDriver": true,
+  "age": 24,
+  "worldTitles": 0
+}
+
+### getAllDrivers
+
+GET http://localhost:3000/driver HTTP/1.1
+
+### getDriver
+
+GET http://localhost:3000/driver/Leclerc HTTP/1.1
+
+### deleteDriver
+
+DELETE http://localhost:3000/driver/Leclerc HTTP/1.1
