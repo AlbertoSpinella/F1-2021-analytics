@@ -60,7 +60,17 @@ export const paramsGrandPrixID = {
     type: "object",
     required: ["grandPrixID"],
     properties: {
-        grandPrixID: { type: "string" },
+        grandPrixID: { type: "string" }
+    },
+    additionalProperties: false
+};
+
+export const paramsDriverIDGrandPrixID = {
+    type: "object",
+    required: ["driverID", "grandPrixID"],
+    properties: {
+        driverID: { type: "string" },
+        grandPrixID: { type: "string" }
     },
     additionalProperties: false
 };

@@ -1,5 +1,6 @@
-import { Driver, paramsDriverIDTeamID, Team } from "../sharedSchemas.js";
+import { Driver, paramsDriverIDTeamID, paramsDriverIDGrandPrixID, Team } from "../sharedSchemas.js";
 import { createDrivesForService } from "./APIs/createDrivesFor.js";
+import { createRacedAtService } from "./APIs/createRacedAt.js";
 
 export const createDrivesForSchema = {
     schema: {
@@ -24,4 +25,23 @@ export const createDrivesForSchema = {
         }
     },
     handler: createDrivesForService
+};
+
+export const createRacedAtSchema = {
+    schema: {
+        tags: ["DRIVESFOR"],
+        params: paramsDriverIDGrandPrixID,
+        body: {
+            type: "object",
+            required: ["position", "points", "fastestLap", "qualified", "pointsFromSprint"],
+            properties: {
+                position: { type: "number" },
+                points: { type: "number" },
+                fastestLap: { type: "boolean" },
+                qualified: { type: "number" },
+                pointsFromSprint: { type: "number" }
+            }
+        },
+    },
+    handler: createRacedAtService
 };

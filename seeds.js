@@ -556,6 +556,169 @@ const allGrandPrix = [
 	}
 ];
 
+const racedAt = [
+	{
+		driver: "Hamilton",
+		position: 1,
+		points: 25,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Verstappen",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 3,
+		points: 16,
+		fastestLap: true,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Raikkonen",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Giovinazzi",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Mazepin",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	}
+];
+
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
 		const body = JSON.stringify(teams[i]);
@@ -588,10 +751,10 @@ const createDrivers = async () => {
 
 const createDrivesFor = async () => {
 	for (let i = 0; i < drivesFor.length; i++) {
-		const since = {};
-		since.since = drivesFor[i].since;
-		const body = JSON.stringify(since);
-		const response = await fetch(`http://localhost:3000/drivesFor/${drivesFor[i].driver}/${drivesFor[i].team}`, {
+		const data = {};
+		data.since = drivesFor[i].since;
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${drivesFor[i].driver}/drivesFor/${drivesFor[i].team}`, {
 			method: "POST",
 			headers: {
 					"Content-Type": "application/json"
@@ -618,7 +781,29 @@ const createAllGrandPrix = async () => {
 	};
 };
 
-createTeams();
-createDrivers();
-createDrivesFor();
-createAllGrandPrix();
+const createRacedAtMonza = async () => {
+	for (let i = 0; i < racedAt.length; i++) {
+		const data = {};
+		data.position = racedAt[i].position;
+		data.points = racedAt[i].points;
+		data.fastestLap = racedAt[i].fastestLap;
+		data.qualified = racedAt[i].qualified;
+		data.pointsFromSprint = racedAt[i].pointsFromSprint;
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAt[i].driver}/racedAt/Monza`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
+await createTeams();
+await createDrivers();
+await createDrivesFor();
+await createAllGrandPrix();
+await createRacedAtMonza();
