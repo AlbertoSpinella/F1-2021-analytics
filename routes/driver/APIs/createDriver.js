@@ -10,6 +10,5 @@ const createDriverController = async (driver) => {
 export const createDriverService = async (req, res) => {
     const { body } = req;
     const result = await createDriverController(body);
-    console.log(result);
     return res.send(result);
 };

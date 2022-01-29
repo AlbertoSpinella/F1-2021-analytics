@@ -276,6 +276,109 @@ const drivers = [
 	}
 ];
 
+const drivesFor = [
+	{
+		driver: "Leclerc",
+		team: "Ferrari",
+		since: "2019"
+	},
+	{
+		driver: "Sainz",
+		team: "Ferrari",
+		since: "2021"
+	},
+	{
+		driver: "Hamilton",
+		team: "Mercedes",
+		since: "2013"
+	},
+	{
+		driver: "Bottas",
+		team: "Mercedes",
+		since: "2017"
+	},
+	{
+		driver: "Verstappen",
+		team: "Redbull",
+		since: "2016"
+	},
+	{
+		driver: "Perez",
+		team: "Redbull",
+		since: "2021"
+	},
+	{
+		driver: "Norris",
+		team: "McLaren",
+		since: "2019"
+	},
+	{
+		driver: "Ricciardo",
+		team: "McLaren",
+		since: "2021"
+	},
+	{
+		driver: "Alonso",
+		team: "Alpine",
+		since: "2021"
+	},
+	{
+		driver: "Ocon",
+		team: "Alpine",
+		since: "2021"
+	},
+	{
+		driver: "Gasly",
+		team: "AlphaTauri",
+		since: "2019"
+	},
+	{
+		driver: "Tsunoda",
+		team: "AlphaTauri",
+		since: "2021"
+	},
+	{
+		driver: "Vettel",
+		team: "AstonMartin",
+		since: "2021"
+	},
+	{
+		driver: "Stroll",
+		team: "AstonMartin",
+		since: "2019"
+	},
+	{
+		driver: "Raikkonen",
+		team: "AlfaRomeo",
+		since: "2019"
+	},
+	{
+		driver: "Giovinazzi",
+		team: "AlfaRomeo",
+		since: "2017"
+	},
+	{
+		driver: "Russell",
+		team: "Williams",
+		since: "2019"
+	},
+	{
+		driver: "Latifi",
+		team: "Williams",
+		since: "2020"
+	},
+	{
+		driver: "Schumacher",
+		team: "Haas",
+		since: "2021"
+	},
+	{
+		driver: "Mazepin",
+		team: "Haas",
+		since: "2021"
+	}
+];
+
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
 		const body = JSON.stringify(teams[i]);
@@ -306,5 +409,23 @@ const createDrivers = async () => {
 	};
 };
 
+const createDrivesFor = async () => {
+	for (let i = 0; i < drivesFor.length; i++) {
+		const since = {};
+		since.since = drivesFor[i].since;
+		const body = JSON.stringify(since);
+		const response = await fetch(`http://localhost:3000/drivesFor/${drivesFor[i].driver}/${drivesFor[i].team}`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 createTeams();
 createDrivers();
+createDrivesFor();

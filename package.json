@@ -10,7 +10,8 @@
     "lint:check": "eslint -c ./.eslintrc.cjs .",
     "lint:fix": "eslint -c ./.eslintrc.cjs . --fix",
     "redis:start": "./scripts/redis_start.sh",
-    "redis:stop": "./scripts/redis_stop.sh"
+    "redis:stop": "./scripts/redis_stop.sh",
+    "seeds": "node seeds.js"
   },
   "author": "",
   "license": "ISC",
