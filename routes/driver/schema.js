@@ -3,7 +3,7 @@ import { getAllDriversService } from "./APIs/getAllDrivers.js";
 import { getDriverService } from "./APIs/getDriver.js";
 import { deleteDriverService } from "./APIs/deleteDriver.js";
 
-const Driver = {
+export const Driver = {
     type: "object",
     required: ["name", "surname", "nationality", "number", "isFirstDriver", "age", "worldTitles"],
     properties: {

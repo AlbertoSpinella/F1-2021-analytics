@@ -3,6 +3,8 @@ import { getAllTeamsService } from "./APIs/getAllTeams.js";
 import { getTeamService } from "./APIs/getTeam.js";
 import { deleteTeamService } from "./APIs/deleteTeam.js";
 
+import { Driver } from "../driver/schema.js";
+
 const Team = {
     type: "object",
     required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal"],
@@ -12,6 +14,22 @@ const Team = {
         secondaryColor: { type: "string" },
         nationality: { type: "string" },
         teamPrincipal: { type: "string" }
+    }
+};
+
+const TeamWithDrivers = {
+    type: "object",
+    required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal", "drivers"],
+    properties: {
+        name: { type: "string" },
+        primaryColor: { type: "string" },
+        secondaryColor: { type: "string" },
+        nationality: { type: "string" },
+        teamPrincipal: { type: "string" },
+        drivers: {
+            type: "array",
+            items: Driver
+        }
     }
 };
 
@@ -50,7 +68,7 @@ export const getAllTeamsSchema = {
         response: {
             200: {
                 type: "array",
-                items: Team
+                items: TeamWithDrivers
             }
         }
     },

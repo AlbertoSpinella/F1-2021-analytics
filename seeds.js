@@ -104,7 +104,7 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Carols",
+		name: "Carlos",
 		surname: "Sainz",
 		number: 55,
 		nationality: "esp",
@@ -390,7 +390,7 @@ const createTeams = async () => {
 			body
 		});
 		const result = await response.json();
-		console.log(result);
+		// console.log(result);
 	};
 };
 
@@ -405,7 +405,7 @@ const createDrivers = async () => {
 			body
 		});
 		const result = await response.json();
-		console.log(result);
+		// console.log(result);
 	};
 };
 
