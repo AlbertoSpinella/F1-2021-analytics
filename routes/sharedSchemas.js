@@ -1,9 +1,10 @@
 export const Driver = {
     type: "object",
-    required: ["name", "surname", "nationality", "number", "isFirstDriver", "age", "worldTitles"],
+    required: ["firstName", "lastName", "shortName", "nationality", "number", "isFirstDriver", "age", "worldTitles"],
     properties: {
-        name: { type: "string" },
-        surname: { type: "string" },
+        firstName: { type: "string" },
+        lastName: { type: "string" },
+        shortName: { type: "string" },
         nationality: { type: "string" },
         number: { type: "number" },
         isFirstDriver: { type: "boolean" },

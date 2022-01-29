@@ -3,8 +3,9 @@ POST http://localhost:3000/driver HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Alberto",
-  "surname": "Spinella",
+  "firstName": "Alberto",
+  "lastName": "Spinella",
+  "shortName": "SPI",
   "number": 9,
   "nationality": "ita",
   "isFirstDriver": true,

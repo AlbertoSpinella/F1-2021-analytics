@@ -95,8 +95,9 @@ const teams = [
 
 const drivers = [
 	{
-		name: "Charles",
-		surname: "Leclerc",
+		firstName: "Charles",
+		lastName: "Leclerc",
+		shortName: "LEC",
 		number: 16,
 		nationality: "mon",
 		isFirstDriver: true,
@@ -104,8 +105,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Carlos",
-		surname: "Sainz",
+		firstName: "Carlos",
+		lastName: "Sainz",
+		shortName: "SAI",
 		number: 55,
 		nationality: "esp",
 		isFirstDriver: false,
@@ -113,8 +115,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Lewis",
-		surname: "Hamilton",
+		firstName: "Lewis",
+		lastName: "Hamilton",
+		shortName: "HAM",
 		number: 44,
 		nationality: "eng",
 		isFirstDriver: true,
@@ -122,8 +125,9 @@ const drivers = [
 		worldTitles: 7
 	},
 	{
-		name: "Valtteri",
-		surname: "Bottas",
+		firstName: "Valtteri",
+		lastName: "Bottas",
+		shortName: "BOT",
 		number: 77,
 		nationality: "fin",
 		isFirstDriver: false,
@@ -131,8 +135,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Max",
-		surname: "Verstappen",
+		firstName: "Max",
+		lastName: "Verstappen",
+		shortName: "VER",
 		number: 33,
 		nationality: "ola",
 		isFirstDriver: true,
@@ -140,8 +145,9 @@ const drivers = [
 		worldTitles: 1
 	},
 	{
-		name: "Sergio",
-		surname: "Perez",
+		firstName: "Sergio",
+		lastName: "Perez",
+		shortName: "PER",
 		number: 11,
 		nationality: "mex",
 		isFirstDriver: false,
@@ -149,8 +155,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Lando",
-		surname: "Norris",
+		firstName: "Lando",
+		lastName: "Norris",
+		shortName: "NOR",
 		number: 4,
 		nationality: "mon",
 		isFirstDriver: true,
@@ -158,8 +165,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Daniel",
-		surname: "Ricciardo",
+		firstName: "Daniel",
+		lastName: "Ricciardo",
+		shortName: "RIC",
 		number: 3,
 		nationality: "aus",
 		isFirstDriver: false,
@@ -167,8 +175,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Fernando",
-		surname: "Alonso",
+		firstName: "Fernando",
+		lastName: "Alonso",
+		shortName: "ALO",
 		number: 14,
 		nationality: "esp",
 		isFirstDriver: true,
@@ -176,8 +185,9 @@ const drivers = [
 		worldTitles: 2
 	},
 	{
-		name: "Esteban",
-		surname: "Ocon",
+		firstName: "Esteban",
+		lastName: "Ocon",
+		shortName: "OCO",
 		number: 31,
 		nationality: "fra",
 		isFirstDriver: false,
@@ -185,8 +195,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Pierre",
-		surname: "Gasly",
+		firstName: "Pierre",
+		lastName: "Gasly",
+		shortName: "GAS",
 		number: 19,
 		nationality: "fra",
 		isFirstDriver: true,
@@ -194,8 +205,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Yuki",
-		surname: "Tsunoda",
+		firstName: "Yuki",
+		lastName: "Tsunoda",
+		shortName: "TSU",
 		number: 38,
 		nationality: "gia",
 		isFirstDriver: false,
@@ -203,8 +215,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Sebastian",
-		surname: "Vettel",
+		firstName: "Sebastian",
+		lastName: "Vettel",
+		shortName: "VET",
 		number: 5,
 		nationality: "ger",
 		isFirstDriver: true,
@@ -212,8 +225,9 @@ const drivers = [
 		worldTitles: 4
 	},
 	{
-		name: "Lance",
-		surname: "Stroll",
+		firstName: "Lance",
+		lastName: "Stroll",
+		shortName: "STR",
 		number: 18,
 		nationality: "can",
 		isFirstDriver: false,
@@ -221,8 +235,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Kimi",
-		surname: "Raikkonen",
+		firstName: "Kimi",
+		lastName: "Raikkonen",
+		shortName: "RAI",
 		number: 7,
 		nationality: "fin",
 		isFirstDriver: true,
@@ -230,8 +245,9 @@ const drivers = [
 		worldTitles: 1
 	},
 	{
-		name: "Antonio",
-		surname: "Giovinazzi",
+		firstName: "Antonio",
+		lastName: "Giovinazzi",
+		shortName: "GIO",
 		number: 28,
 		nationality: "ita",
 		isFirstDriver: false,
@@ -239,8 +255,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "George",
-		surname: "Russell",
+		firstName: "George",
+		lastName: "Russell",
+		shortName: "RUS",
 		number: 63,
 		nationality: "eng",
 		isFirstDriver: true,
@@ -248,8 +265,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Nicholas",
-		surname: "Latifi",
+		firstName: "Nicholas",
+		lastName: "Latifi",
+		shortName: "LAT",
 		number: 5,
 		nationality: "can",
 		isFirstDriver: false,
@@ -257,8 +275,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Mick",
-		surname: "Schumacher",
+		firstName: "Mick",
+		lastName: "Schumacher",
+		shortName: "MSC",
 		number: 47,
 		nationality: "ger",
 		isFirstDriver: true,
@@ -266,8 +285,9 @@ const drivers = [
 		worldTitles: 0
 	},
 	{
-		name: "Nikita",
-		surname: "Mazepin",
+		firstName: "Nikita",
+		lastName: "Mazepin",
+		shortName: "MAZ",
 		number: 9,
 		nationality: "rus",
 		isFirstDriver: false,

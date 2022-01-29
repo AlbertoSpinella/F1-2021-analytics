@@ -6,10 +6,11 @@ import { Driver, responseMessage, Team } from "../sharedSchemas.js";
 
 export const DriverWithTeam = {
     type: "object",
-    required: ["name", "surname", "nationality", "number", "isFirstDriver", "age", "worldTitles", "team"],
+    required: ["firstName", "lastName", "shortName", "nationality", "number", "isFirstDriver", "age", "worldTitles", "team"],
     properties: {
-        name: { type: "string" },
-        surname: { type: "string" },
+        firstName: { type: "string" },
+        lastName: { type: "string" },
+        shortName: { type: "string" },
         nationality: { type: "string" },
         number: { type: "number" },
         isFirstDriver: { type: "boolean" },
@@ -24,10 +25,11 @@ export const createDriverSchema = {
         tags: ["DRIVER"],
         body: {
             type: "object",
-            required: ["name", "surname", "nationality", "number", "isFirstDriver", "age", "worldTitles"],
+            required: ["firstName", "lastName", "shortName", "nationality", "number", "isFirstDriver", "age", "worldTitles"],
             properties: {
-                name: { type: "string" },
-                surname: { type: "string" },
+                firstName: { type: "string" },
+                lastName: { type: "string" },
+                shortName: { type: "string" },
                 nationality: { type: "string" },
                 number: { type: "number" },
                 isFirstDriver: { type: "boolean" },

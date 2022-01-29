@@ -1,6 +1,6 @@
 const createDriverController = async (driver) => {
     const query = `
-        MERGE (d:Driver{id:'${driver.surname}',name:'${driver.name}',surname:'${driver.surname}',number:'${driver.number}',nationality:'${driver.nationality}',isFirstDriver:'${driver.isFirstDriver}',age:'${driver.age}',worldTitles:'${driver.worldTitles}'})
+        MERGE (d:Driver{id:'${driver.lastName}',name:'${driver.lastName}',firstName:'${driver.firstName}',lastName:'${driver.lastName}',shortName:'${driver.shortName}',number:'${driver.number}',nationality:'${driver.nationality}',isFirstDriver:'${driver.isFirstDriver}',age:'${driver.age}',worldTitles:'${driver.worldTitles}'})
         RETURN d
     `;
     logRGQuery(query);
