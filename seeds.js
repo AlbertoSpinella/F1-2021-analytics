@@ -399,6 +399,163 @@ const drivesFor = [
 	}
 ];
 
+const allGrandPrix = [
+	{
+		name: "Gulf Air Bahrain Grand Prix",
+		circuit: "Bahrain International Circuit",
+		nation: "bah",
+		city: "Manama",
+		date: "03-28-2021"
+	},
+	{
+		name: "Pirelli Gran Premio del Made in Italy e della Emilia Romagnaa",
+		circuit: "Autodromo Enzo e Dino Ferrari",
+		nation: "ita",
+		city: "Imola",
+		date: "04-18-2021"
+	},
+	{
+		name: "Heineken Grande Prémio de Portugal",
+		circuit: "Autódromo Internacional do Algarve",
+		nation: "por",
+		city: "Portimão",
+		date: "05-02-2021"
+	},
+	{
+		name: "Aramco Gran Premio de España",
+		circuit: "Circuit de Barcelona-Catalunya",
+		nation: "esp",
+		city: "Montmeló",
+		date: "05-09-2021"
+	},
+	{
+		name: "Grand Prix de Monaco",
+		circuit: "Circuit de Monaco",
+		nation: "mco",
+		city: "Monaco",
+		date: "05-23-2021"
+	},
+	{
+		name: "Azerbaijan Grand Prix",
+		circuit: "Baku City Circuit",
+		nation: "aze",
+		city: "Baku",
+		date: "06-06-2021"
+	},
+	{
+		name: "Emirates Grand Prix de France",
+		circuit: "Circuit Paul Ricard",
+		nation: "fra",
+		city: "Le Castellet",
+		date: "06-20-2021"
+	},
+	{
+		name: "BWT Großer Preis der Steiermark",
+		circuit: "Red Bull Ring",
+		nation: "aut",
+		city: "Spielberg",
+		date: "06-27-2021"
+	},
+	{
+		name: "BWT Großer Preis von Österreich",
+		circuit: "Red Bull Ring",
+		nation: "aut",
+		city: "Spielberg",
+		date: "07-04-2021"
+	},
+	{
+		name: "Pirelli British Grand Prix",
+		circuit: "Silverstone Circuit",
+		nation: "eng",
+		city: "Silverstone",
+		date: "07-18-2021"
+	},
+	{
+		name: "Rolex Magyar Nagydíj",
+		circuit: "Hungaroring",
+		nation: "ung",
+		city: "Mogyoród",
+		date: "08-01-2021"
+	},
+	{
+		name: "Rolex Belgian Grand Prix",
+		circuit: "Circuit de Spa-Francorchamps",
+		nation: "bel",
+		city: "Stavelot",
+		date: "08-29-2021"
+	},
+	{
+		name: "Heineken Dutch Grand Prix",
+		circuit: "Circuit Zandvoort",
+		nation: "ola",
+		city: "Zandvoort",
+		date: "09-05-2021"
+	},
+	{
+		name: "Heineken Gran Premio di Italia",
+		circuit: "Autodromo nazionale di Monza",
+		nation: "ita",
+		city: "Monza",
+		date: "09-12-2021"
+	},
+	{
+		name: "VTB Russian Grand Prix",
+		circuit: "Sochi Autodrom",
+		nation: "rus",
+		city: "Soči",
+		date: "09-26-2021"
+	},
+	{
+		name: "Rolex Turkish Grand Prix",
+		circuit: "Istanbul International Circuit",
+		nation: "tur",
+		city: "Tuzla",
+		date: "10-10-2021"
+	},
+	{
+		name: "Aramco United States Grand Prix",
+		circuit: " 	Circuit of the Americas",
+		nation: "usa",
+		city: "Austin",
+		date: "10-24-2021"
+	},
+	{
+		name: "Gran Premio de la Ciudad de México",
+		circuit: "Autodromo Hermanos Rodríguez",
+		nation: "mex",
+		city: "Ciudad de México",
+		date: "11-07-2021"
+	},
+	{
+		name: "Heineken Grande Prêmio de São Paulo",
+		circuit: "Autódromo José Carlos Pace",
+		nation: "bra",
+		city: "San Paolo",
+		date: "11-14-2021"
+	},
+	{
+		name: "Ooredoo Qatar Grand Prix",
+		circuit: "Losail International Circuit",
+		nation: "qat",
+		city: "Doha",
+		date: "11-21-2021"
+	},
+	{
+		name: "STC Saudi Arabian Grand Prix",
+		circuit: "Jeddah Corniche Circuit",
+		nation: "ara",
+		city: "Gedda",
+		date: "12-05-2021"
+	},
+	{
+		name: "Etihad Airways Abu Dhabi Grand Prix",
+		circuit: "Yas Marina Circuit",
+		nation: "eau",
+		city: "Abu Dhabi",
+		date: "12-12-2021"
+	}
+];
+
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
 		const body = JSON.stringify(teams[i]);
@@ -446,6 +603,22 @@ const createDrivesFor = async () => {
 	};
 };
 
+const createAllGrandPrix = async () => {
+	for (let i = 0; i < allGrandPrix.length; i++) {
+		const body = JSON.stringify(allGrandPrix[i]);
+		const response = await fetch("http://localhost:3000/grandPrix", {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 createTeams();
 createDrivers();
 createDrivesFor();
+createAllGrandPrix();

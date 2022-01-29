@@ -8,8 +8,10 @@ const getAllGrandPrixController = async () => {
 
     const allGrandPrix = [];
 
-    queryResult._results[0]?._values.forEach(gp => {
-        allGrandPrix.push(gp.properties);
+    console.log("COME", queryResult._results[0]?._values);
+
+    queryResult._results.forEach(gp => {
+        allGrandPrix.push(gp._values[0].properties);
     });
     return allGrandPrix;
 };
