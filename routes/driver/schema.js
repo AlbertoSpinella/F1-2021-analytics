@@ -2,10 +2,11 @@ import { createDriverService } from "./APIs/createDriver.js";
 import { getAllDriversService } from "./APIs/getAllDrivers.js";
 import { getDriverService } from "./APIs/getDriver.js";
 import { deleteDriverService } from "./APIs/deleteDriver.js";
+import { Driver, Team } from "../sharedSchemas.js";
 
-export const Driver = {
+export const DriverWithTeam = {
     type: "object",
-    required: ["name", "surname", "nationality", "number", "isFirstDriver", "age", "worldTitles"],
+    required: ["name", "surname", "nationality", "number", "isFirstDriver", "age", "worldTitles", "team"],
     properties: {
         name: { type: "string" },
         surname: { type: "string" },
@@ -13,7 +14,8 @@ export const Driver = {
         number: { type: "number" },
         isFirstDriver: { type: "boolean" },
         age: { type: "number" },
-        worldTitles: { type: "number" }
+        worldTitles: { type: "number" },
+        team: Team
     }
 };
 
@@ -58,7 +60,7 @@ export const getDriverSchema = {
     schema: {
         tags: ["DRIVER"],
         response: {
-            200: Driver
+            200: DriverWithTeam
         }
     },
     handler: getDriverService

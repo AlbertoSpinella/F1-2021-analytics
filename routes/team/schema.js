@@ -3,19 +3,7 @@ import { getAllTeamsService } from "./APIs/getAllTeams.js";
 import { getTeamService } from "./APIs/getTeam.js";
 import { deleteTeamService } from "./APIs/deleteTeam.js";
 
-import { Driver } from "../driver/schema.js";
-
-const Team = {
-    type: "object",
-    required: ["name", "primaryColor", "secondaryColor", "nationality", "teamPrincipal"],
-    properties: {
-        name: { type: "string" },
-        primaryColor: { type: "string" },
-        secondaryColor: { type: "string" },
-        nationality: { type: "string" },
-        teamPrincipal: { type: "string" }
-    }
-};
+import { Driver, Team } from "../sharedSchemas.js";
 
 const TeamWithDrivers = {
     type: "object",
