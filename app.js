@@ -4,6 +4,7 @@ import graph from "./libs/redisgraph.js";
 import { teamPlugin } from "./routes/team/plugin.js";
 import { driverPlugin } from "./routes/driver/plugin.js";
 import { drivesForPlugin } from "./routes/drivesFor/plugin.js";
+import { grandPrixPlugin } from "./routes/grandPrix/plugin.js";
 
 const app = Fastify();
 
@@ -15,7 +16,8 @@ app.register(fastifySwagger, {
         tags: [
             { name: "TEAM", description: "Team API" },
             { name: "DRIVER", description: "Driver API" },
-            { name: "DRIVESFOR", description: "DrivesFor API" }
+            { name: "DRIVESFOR", description: "DrivesFor API" },
+            { name: "GRANDPRIX", description: "GrandPrix API" }
         ]
     },
 });
@@ -23,5 +25,6 @@ app.register(fastifySwagger, {
 app.register(teamPlugin, { prefix: "/team" });
 app.register(driverPlugin, { prefix: "/driver" });
 app.register(drivesForPlugin, { prefix: "/drivesFor" });
+app.register(grandPrixPlugin, { prefix: "/grandPrix" });
 
 export default app;

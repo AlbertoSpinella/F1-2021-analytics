@@ -1,0 +1,23 @@
+### createGrandPrix
+POST http://localhost:3000/grandPrix HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Gran Premio di Italia",
+  "circuit": "Autodromo nazionale di Monza",
+  "nation": "ita",
+  "city": "Monza",
+  "date": "12-09-2021"
+}
+
+### getAllGrandPrix
+
+GET http://localhost:3000/grandPrix HTTP/1.1
+
+### getGrandPrix
+
+GET http://localhost:3000/grandPrix/Monza HTTP/1.1
+
+### deleteGrandPrix
+
+DELETE http://localhost:3000/grandPrix/Monza HTTP/1.1

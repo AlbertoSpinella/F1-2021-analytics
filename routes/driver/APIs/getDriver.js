@@ -8,7 +8,7 @@ const getDriverController = async (driverID) => {
     logRGQuery(query);
     const queryResult = await graph.query(query);
 
-    if (queryResult._resultsCount == 0) throw new HTTPerror("Driver not found", 400);
+    if (queryResult._resultsCount == 0) throw new HTTPerror("Driver not found", 404);
 
     const driver = queryResult._results[0]._values[0]?.properties;
     driver.team = queryResult._results[0]._values[1]?.properties;

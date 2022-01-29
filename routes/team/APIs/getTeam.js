@@ -8,7 +8,7 @@ const getTeamController = async (teamID) => {
     logRGQuery(query);
     const queryResult = await graph.query(query);
 
-    if (queryResult._resultsCount == 0) throw new HTTPerror("Team not found", 400);
+    if (queryResult._resultsCount == 0) throw new HTTPerror("Team not found", 404);
 
     const team = queryResult._results[0]._values[0].properties;
     team.drivers = [];

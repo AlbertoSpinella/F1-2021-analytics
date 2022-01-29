@@ -41,3 +41,25 @@ export const paramsDriverIDTeamID = {
     },
     additionalProperties: false
 };
+
+export const GrandPrix = {
+    type: "object",
+    required: ["name", "circuit", "completeName", "nation", "city", "date"],
+    properties: {
+        name: { type: "string" },
+        circuit: { type: "string" },
+        completeName: { type: "string" },
+        nation: { type: "string" },
+        city: { type: "string" },
+        date: { type: "string" }
+    }
+};
+
+export const paramsGrandPrixID = {
+    type: "object",
+    required: ["grandPrixID"],
+    properties: {
+        grandPrixID: { type: "string" },
+    },
+    additionalProperties: false
+};
