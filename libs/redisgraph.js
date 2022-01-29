@@ -1,7 +1,7 @@
 import RedisGraphJS from "redisgraph.js";
 const RedisGraph = RedisGraphJS.Graph;
 
-global.graph = new RedisGraph("Bandfinder");
+global.graph = new RedisGraph("F1-2021-statistics");
 
 global.logRGQuery = (query) => {
     console.log(`${new Date().toISOString()} RedisGraph query:`);
