@@ -3,7 +3,7 @@ import { getAllTeamsService } from "./APIs/getAllTeams.js";
 import { getTeamService } from "./APIs/getTeam.js";
 import { deleteTeamService } from "./APIs/deleteTeam.js";
 
-import { Driver, Team } from "../sharedSchemas.js";
+import { Driver, responseMessage, Team } from "../sharedSchemas.js";
 
 const TeamWithDrivers = {
     type: "object",
@@ -20,6 +20,16 @@ const TeamWithDrivers = {
         }
     }
 };
+
+const paramsTeamID = {
+    type: "object",
+    required: ["teamID"],
+    properties: {
+        teamID: { type: "string" }
+    },
+    additionalProperties: false
+};
+
 
 export const createTeamSchema = {
     schema: {
@@ -66,6 +76,7 @@ export const getAllTeamsSchema = {
 export const getTeamSchema = {
     schema: {
         tags: ["TEAM"],
+        params: paramsTeamID,
         response: {
             200: TeamWithDrivers
         }
@@ -75,7 +86,11 @@ export const getTeamSchema = {
 
 export const deleteTeamSchema = {
     schema: {
-        tags: ["TEAM"]
+        tags: ["TEAM"],
+        params: paramsTeamID,
+        response: {
+            200: responseMessage
+        }
     },
     handler: deleteTeamService
 };

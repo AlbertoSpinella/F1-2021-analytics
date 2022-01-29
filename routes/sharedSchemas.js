@@ -23,3 +23,21 @@ export const Team = {
         teamPrincipal: { type: "string" }
     }
 };
+
+export const responseMessage = {
+    type: "object",
+    required: ["message"],
+    properties: {
+        message: { type: "string" }
+    }
+};
+
+export const paramsDriverIDTeamID = {
+    type: "object",
+    required: ["driverID",  "teamID"],
+    properties: {
+        driverID: { type: "string" },
+        teamID: { type: "string" }
+    },
+    additionalProperties: false
+};

@@ -6,10 +6,11 @@ const createDrivesForController = async (driverID, teamID, since) => {
         return d,t
     `;
     logRGQuery(query);
-    const result = {};
     const queryResult = await graph.query(query);
-    result.driver = queryResult._results[0]._values[0].properties;
-    result.team = queryResult._results[0]._values[1].properties;
+    const result = {
+        driver: queryResult._results[0]._values[0].properties,
+        team: queryResult._results[0]._values[1].properties
+    };
     return result;
 };
 
