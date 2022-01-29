@@ -1,8 +1,7 @@
 import RedisGraphJS from "redisgraph.js";
 const RedisGraph = RedisGraphJS.Graph;
 
-
-let graph = new RedisGraph("Bandfinder");
+global.graph = new RedisGraph("Bandfinder");
 
 export const graphDelete = async () => {
     const res = await graph.deleteGraph();

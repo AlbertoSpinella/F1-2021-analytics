@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 import fastifySwagger from "fastify-swagger";
 import { teamPlugin } from "./routes/team/plugin.js";
+import graph from "./libs/redisgraph.js";
 
 const app = Fastify();
 

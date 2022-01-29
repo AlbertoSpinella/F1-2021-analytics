@@ -11,3 +11,15 @@ Content-Type: application/json
   "nationality": "ita",
   "teamPrincipal": "Binotto"
 }
+
+### getAllTeams
+
+GET http://localhost:3000/team HTTP/1.1
+
+### getTeam
+
+GET http://localhost:3000/team/Ferrari HTTP/1.1
+
+### deleteTeam
+
+DELETE http://localhost:3000/team/Ferrari HTTP/1.1
