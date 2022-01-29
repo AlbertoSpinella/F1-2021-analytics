@@ -3,6 +3,7 @@ const getAllTeamsController = async () => {
         MATCH (t:Team)<-[r:DrivesFor]-(d:Driver)
         RETURN t,d
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
 
     const teams = [];

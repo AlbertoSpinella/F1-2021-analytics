@@ -3,6 +3,7 @@ const deleteDriverController = async (driverID) => {
         MATCH (d:Driver {id: '${driverID}'})
         DETACH DELETE d
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
     return { message:  "deleted" };
 };

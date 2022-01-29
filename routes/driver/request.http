@@ -3,12 +3,12 @@ POST http://localhost:3000/driver HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Charles",
-  "surname": "Leclerc",
-  "number": 16,
-  "nationality": "mon",
+  "name": "Alberto",
+  "surname": "Spinella",
+  "number": 9,
+  "nationality": "ita",
   "isFirstDriver": true,
-  "age": 24,
+  "age": 23,
   "worldTitles": 0
 }
 

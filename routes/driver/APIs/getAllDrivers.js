@@ -3,6 +3,7 @@ const getAllDriversController = async () => {
         MATCH (d:Driver)
         RETURN d
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
 
     const drivers = [];

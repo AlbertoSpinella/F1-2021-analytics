@@ -3,6 +3,7 @@ const deleteTeamController = async (teamID) => {
         MATCH (t:Team {id: '${teamID}'})
         DETACH DELETE t
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
     return { message:  "deleted" };
 };

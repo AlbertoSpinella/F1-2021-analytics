@@ -5,6 +5,7 @@ const createDrivesForController = async (driverID, teamID, since) => {
         MERGE (d)-[r:DrivesFor {id:'${driverID}-${teamID}',since:'${since}'}]->(t)
         return d,t
     `;
+    logRGQuery(query);
     const result = {};
     const queryResult = await graph.query(query);
     result.driver = queryResult._results[0]._values[0].properties;

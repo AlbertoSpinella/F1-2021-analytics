@@ -5,6 +5,7 @@ const getTeamController = async (teamID) => {
         MATCH (t:Team {id: '${teamID}'})
         RETURN t
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
 
     if (queryResult._resultsCount == 0) throw new HTTPerror("Team not found", 400);

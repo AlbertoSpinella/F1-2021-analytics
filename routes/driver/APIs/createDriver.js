@@ -3,6 +3,7 @@ const createDriverController = async (driver) => {
         MERGE (d:Driver{id:'${driver.surname}',name:'${driver.name}',surname:'${driver.surname}',number:'${driver.number}',nationality:'${driver.nationality}',isFirstDriver:'${driver.isFirstDriver}',age:'${driver.age}',worldTitles:'${driver.worldTitles}'})
         RETURN d
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
     return queryResult._results[0]._values[0].properties;
 };

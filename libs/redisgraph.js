@@ -3,6 +3,12 @@ const RedisGraph = RedisGraphJS.Graph;
 
 global.graph = new RedisGraph("Bandfinder");
 
+global.logRGQuery = (query) => {
+    console.log(`${new Date().toISOString()} RedisGraph query:`);
+    console.log(query.replace(/\n |  /gm,''));
+    console.log();
+};
+
 export const graphDelete = async () => {
     const res = await graph.deleteGraph();
     return {result: res._statistics._raw};

@@ -3,6 +3,7 @@ const createTeamController = async (team) => {
         MERGE (t:Team{id:'${team.name}',name:'${team.name}',primaryColor:'${team.colors.primary}',secondaryColor:'${team.colors.secondary}',nationality:'${team.nationality}',teamPrincipal:'${team.teamPrincipal}'})
         RETURN t
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
     return queryResult._results[0]._values[0].properties;
 };

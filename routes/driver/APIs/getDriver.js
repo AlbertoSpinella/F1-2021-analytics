@@ -5,6 +5,7 @@ const getDriverController = async (driverID) => {
         MATCH (d:Driver {id: '${driverID}'})
         RETURN d
     `;
+    logRGQuery(query);
     const queryResult = await graph.query(query);
 
     if (queryResult._resultsCount == 0) throw new HTTPerror("Driver not found", 400);
