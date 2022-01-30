@@ -209,7 +209,7 @@ const drivers = [
 		lastName: "Tsunoda",
 		shortName: "TSU",
 		number: 38,
-		nationality: "gia",
+		nationality: "jap",
 		isFirstDriver: false,
 		age: 21,
 		worldTitles: 0
@@ -292,6 +292,16 @@ const drivers = [
 		nationality: "rus",
 		isFirstDriver: false,
 		age: 22,
+		worldTitles: 0
+	},
+	{
+		firstName: "Robert",
+		lastName: "Kubica",
+		shortName: "KUB",
+		number: 88,
+		nationality: "pol",
+		isFirstDriver: false,
+		age: 37,
 		worldTitles: 0
 	}
 ];
@@ -395,6 +405,11 @@ const drivesFor = [
 	{
 		driver: "Mazepin",
 		team: "Haas",
+		since: "2021"
+	},
+	{
+		driver: "Kubica",
+		team: "AlfaRomeo",
 		since: "2021"
 	}
 ];
@@ -2349,6 +2364,658 @@ const racedAtMogyoród = [
 	}
 ];
 
+const racedAtStavelot = [
+	{
+		driver: "Verstappen",
+		position: 1,
+		points: 12.5,
+		fastestLap: false,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 2,
+		points: 9,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 3,
+		points: 7.5,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 4,
+		points: 6,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 5,
+		points: 5,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 6,
+		points: 4,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 7,
+		points: 3,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 8,
+		points: 2,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 9,
+		points: 1,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 10,
+		points: 0.5,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Giovinazzi",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Mazepin",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Raikkonen",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	}
+];
+
+const racedAtZandvoort = [
+	{
+		driver: "Verstappen",
+		position: 1,
+		points: 25,
+		fastestLap: false,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 2,
+		points: 19,
+		fastestLap: true,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Giovinazzi",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Kubica",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Mazepin",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	}
+];
+
+const racedAtMonza = [
+	{
+		driver: "Ricciardo",
+		position: 1,
+		points: 26,
+		fastestLap: true,
+		qualified: 1,
+		pointsFromSprint: 1
+	},
+	{
+		driver: "Norris",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 3
+	},
+	{
+		driver: "Leclerc",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Giovinazzi",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Kubica",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Mazepin",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Verstappen",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 2
+	},
+	{
+		driver: "Gasly",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	}
+];
+
+const racedAtSoči = [
+	{
+		driver: "Hamilton",
+		position: 1,
+		points: 25,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Verstappen",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 7,
+		points: 7,
+		fastestLap: true,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Raikkonen",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Giovinazzi",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Mazepin",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	}
+];
+
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
 		const body = JSON.stringify(teams[i]);
@@ -2664,6 +3331,98 @@ const createRacedAtMogyoród = async () => {
 	};
 };
 
+const createRacedAtStavelot = async () => {
+	for (let i = 0; i < racedAtStavelot.length; i++) {
+		const data = {
+			position: racedAtStavelot[i].position,
+			points: racedAtStavelot[i].points,
+			fastestLap: racedAtStavelot[i].fastestLap,
+			qualified: racedAtStavelot[i].qualified,
+			pointsFromSprint: racedAtStavelot[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtStavelot[i].driver}/racedAt/Stavelot`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
+const createRacedAtZandvoort = async () => {
+	for (let i = 0; i < racedAtZandvoort.length; i++) {
+		const data = {
+			position: racedAtZandvoort[i].position,
+			points: racedAtZandvoort[i].points,
+			fastestLap: racedAtZandvoort[i].fastestLap,
+			qualified: racedAtZandvoort[i].qualified,
+			pointsFromSprint: racedAtZandvoort[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtZandvoort[i].driver}/racedAt/Zandvoort`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
+const createRacedAtMonza = async () => {
+	for (let i = 0; i < racedAtMonza.length; i++) {
+		const data = {
+			position: racedAtMonza[i].position,
+			points: racedAtMonza[i].points,
+			fastestLap: racedAtMonza[i].fastestLap,
+			qualified: racedAtMonza[i].qualified,
+			pointsFromSprint: racedAtMonza[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtMonza[i].driver}/racedAt/Monza`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
+const createRacedAtSoči = async () => {
+	for (let i = 0; i < racedAtSoči.length; i++) {
+		const data = {
+			position: racedAtSoči[i].position,
+			points: racedAtSoči[i].points,
+			fastestLap: racedAtSoči[i].fastestLap,
+			qualified: racedAtSoči[i].qualified,
+			pointsFromSprint: racedAtSoči[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtSoči[i].driver}/racedAt/Soči`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 await createTeams();
 await createDrivers();
 await createDrivesFor();
@@ -2680,3 +3439,7 @@ await createRacedAtSpielberg_1();
 await createRacedAtSpielberg_2();
 await createRacedAtSilverstone();
 await createRacedAtMogyoród();
+await createRacedAtStavelot();
+await createRacedAtZandvoort();
+await createRacedAtMonza();
+await createRacedAtSoči();
