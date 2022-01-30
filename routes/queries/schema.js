@@ -1,4 +1,5 @@
 import { getAllGrandPrixWinnersService } from "./APIs/getAllGrandPrixWinners.js";
+import { Driver, GrandPrix, responseRacedAt } from "../sharedSchemas.js";
 
 export const getAllGrandPrixWinnersSchema = {
     schema: {
@@ -8,10 +9,11 @@ export const getAllGrandPrixWinnersSchema = {
                 type: "array",
                 items: {
                     type: "object",
-                    required: ["driver", "grandPrix"],
+                    required: ["driver", "racedAt", "grandPrix"],
                     properties: {
-                        driver: { type: "string" },
-                        grandPrix: { type: "string" }
+                        driver: Driver,
+                        racedAt: responseRacedAt,
+                        grandPrix: GrandPrix
                     }
                 }
             }
