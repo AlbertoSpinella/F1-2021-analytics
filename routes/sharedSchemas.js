@@ -87,3 +87,12 @@ export const responseRacedAt = {
         pointsFromSprint: { type: "number" }
     }
 };
+
+export const paramsDriverID = {
+    type: "object",
+    required: ["driverID"],
+    properties: {
+        driverID: { type: "string" }
+    },
+    additionalProperties: false
+};

@@ -2,7 +2,9 @@ import {
     getAllGrandPrixWinnersSchema,
     getAllGrandChelemsSchema,
     getGrandChelemDriversSchema,
-    getAllFastestLapsSchema
+    getAllFastestLapsSchema,
+    positionsGainedOrLosedPerGPSchema,
+    positionsGainedOrLosedPerGPByDriverIDSchema
 } from "./schema.js";
 
 export const queriesPlugin = (fastify, options, done) => {
@@ -10,7 +12,8 @@ export const queriesPlugin = (fastify, options, done) => {
     fastify.get("/grandChelem", getAllGrandChelemsSchema);
     fastify.get("/grandChelemDrivers", getGrandChelemDriversSchema);
     fastify.get("/fastestLap", getAllFastestLapsSchema);
-    // fastify.get("/fastestLapLessData", getAllFastestLapsLessDataSchema);
+    fastify.get("/positionsGainedOrLosedPerGP", positionsGainedOrLosedPerGPSchema);
+    fastify.get("/positionsGainedOrLosedPerGP/:driverID", positionsGainedOrLosedPerGPByDriverIDSchema);
 
     done();
 };

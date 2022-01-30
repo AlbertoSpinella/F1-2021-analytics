@@ -9,3 +9,9 @@ GET http://localhost:3000/queries/grandChelemDrivers HTTP/1.1
 
 ### getAllFastestLaps
 GET http://localhost:3000/queries/fastestLap HTTP/1.1
+
+### getPositionsGainedOrLosedPerGP
+GET http://localhost:3000/queries/positionsGainedOrLosedPerGP HTTP/1.1
+
+### getPositionsGainedOrLosedPerGPByDriverID
+GET http://localhost:3000/queries/positionsGainedOrLosedPerGP/Leclerc HTTP/1.1

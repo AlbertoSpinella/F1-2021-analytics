@@ -2,7 +2,7 @@ import { createDriverService } from "./APIs/createDriver.js";
 import { getAllDriversService } from "./APIs/getAllDrivers.js";
 import { getDriverService } from "./APIs/getDriver.js";
 import { deleteDriverService } from "./APIs/deleteDriver.js";
-import { Driver, responseMessage, Team } from "../sharedSchemas.js";
+import { Driver, paramsDriverID, responseMessage, Team } from "../sharedSchemas.js";
 
 export const DriverWithTeam = {
     type: "object",
@@ -44,16 +44,6 @@ export const createDriverSchema = {
     },
     handler: createDriverService
 };
-
-const paramsDriverID = {
-    type: "object",
-    required: ["driverID"],
-    properties: {
-        driverID: { type: "string" }
-    },
-    additionalProperties: false
-};
-
 
 export const getAllDriversSchema = {
     schema: {
