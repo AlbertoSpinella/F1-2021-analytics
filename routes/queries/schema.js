@@ -1,6 +1,7 @@
 import { getAllGrandPrixWinnersService } from "./APIs/getAllGrandPrixWinners.js";
 import { getAllGrandChelemsService } from "./APIs/getGrandChelems.js";
 import { getGrandChelemDriversService } from "./APIs/getGrandChelemDrivers.js";
+import { getAllFastestLapsService } from "./APIs/getAllFastestLaps.js";
 import { Driver, GrandPrix, responseRacedAt } from "../sharedSchemas.js";
 
 export const getAllGrandPrixWinnersSchema = {
@@ -56,4 +57,17 @@ export const getGrandChelemDriversSchema = {
         }
     },
     handler: getGrandChelemDriversService
+};
+
+export const getAllFastestLapsSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: responseRacedAt
+            }
+        }
+    },
+    handler: getAllFastestLapsService
 };
