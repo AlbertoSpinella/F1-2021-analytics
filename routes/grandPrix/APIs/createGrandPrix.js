@@ -2,7 +2,6 @@ import { HTTPerror } from "../../../libs/errors.js";
 
 const createGrandPrixController = async (grandPrix) => {
     const date = new Date(grandPrix.date).getTime();
-    console.log({ old: grandPrix.date, new: date});
     if (isNaN(date)) throw new HTTPerror("Invalid date format", 400);
     const query = `
         MERGE (g:GrandPrix{id:'${grandPrix.city}',name:'${grandPrix.city}',completeName:'${grandPrix.name}',circuit:'${grandPrix.circuit}',nation:'${grandPrix.nation}',city:'${grandPrix.city}',date:'${date}'})
