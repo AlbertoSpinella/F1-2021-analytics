@@ -74,3 +74,16 @@ export const paramsDriverIDGrandPrixID = {
     },
     additionalProperties: false
 };
+
+export const responseRacedAt = {
+    type: "object",
+    required: ["id", "position", "points", "fastestLap", "qualified", "pointsFromSprint"],
+    properties: {
+        id: { type: "string" },
+        position: { type: "number" },
+        points: { type: "number" },
+        fastestLap: { type: "boolean" },
+        qualified: { type: "number" },
+        pointsFromSprint: { type: "number" }
+    }
+};

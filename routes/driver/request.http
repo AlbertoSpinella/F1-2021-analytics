@@ -8,7 +8,7 @@ Content-Type: application/json
   "shortName": "SPI",
   "number": 9,
   "nationality": "ita",
-  "isFirstDriver": true,
+  "isFirstDriver": false,
   "age": 23,
   "worldTitles": 0
 }
@@ -19,7 +19,7 @@ GET http://localhost:3000/driver HTTP/1.1
 
 ### getDriver
 
-GET http://localhost:3000/driver/Leclerc HTTP/1.1
+GET http://localhost:3000/driver/Spinella HTTP/1.1
 
 ### deleteDriver
 
