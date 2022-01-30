@@ -3,14 +3,14 @@ const createDrivesForController = async (driverID, teamID, since) => {
         MATCH
         (d:Driver {id:'${driverID}'}),(t:Team {id:'${teamID}'})
         MERGE (d)-[r:DrivesFor {id:'${driverID}-${teamID}',since:'${since}'}]->(t)
-        return d,t
+        return d,t, d.isFirstDriver = 'true' as isFirstDriver
     `;
     logRGQuery(query);
     const queryResult = await graph.query(query);
-    const result = {
-        driver: queryResult._results[0]._values[0].properties,
-        team: queryResult._results[0]._values[1].properties
-    };
+    const driver = queryResult._results[0]._values[0].properties;
+    driver.isFirstDriver = queryResult._results[0]._values[2];
+    const team = queryResult._results[0]._values[1].properties;
+    const result = { driver, team };
     return result;
 };
 

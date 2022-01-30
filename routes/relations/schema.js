@@ -1,4 +1,4 @@
-import { Driver, paramsDriverIDTeamID, paramsDriverIDGrandPrixID, Team } from "../sharedSchemas.js";
+import { Driver, paramsDriverIDTeamID, paramsDriverIDGrandPrixID, Team, responseRacedAt, GrandPrix } from "../sharedSchemas.js";
 import { createDrivesForService } from "./APIs/createDrivesFor.js";
 import { createRacedAtService } from "./APIs/createRacedAt.js";
 
@@ -42,6 +42,13 @@ export const createRacedAtSchema = {
                 pointsFromSprint: { type: "number" }
             }
         },
+        response: {
+            200: {
+                driver: Driver,
+                racedAt: responseRacedAt,
+                grandPrix: GrandPrix
+            }
+        }
     },
     handler: createRacedAtService
 };

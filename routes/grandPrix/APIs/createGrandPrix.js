@@ -4,7 +4,7 @@ const createGrandPrixController = async (grandPrix) => {
     const date = new Date(grandPrix.date).getTime();
     if (isNaN(date)) throw new HTTPerror("Invalid date format", 400);
     const query = `
-        MERGE (g:GrandPrix{id:'${grandPrix.city}',name:'${grandPrix.city}',completeName:'${grandPrix.name}',circuit:'${grandPrix.circuit}',nation:'${grandPrix.nation}',city:'${grandPrix.city}',date:'${date}'})
+        MERGE (g:GrandPrix{id:'${grandPrix.city}',name:'${grandPrix.city}',completeName:'${grandPrix.name}',circuit:'${grandPrix.circuit}',nation:'${grandPrix.nation}',city:'${grandPrix.city}',date:${date}})
         RETURN g
     `;
     logRGQuery(query);

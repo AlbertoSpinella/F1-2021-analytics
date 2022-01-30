@@ -3,7 +3,8 @@ import { HTTPerror } from "../../../libs/errors.js";
 const getTeamController = async (teamID) => {
     const query = `
         MATCH (t:Team {id: '${teamID}'})<-[r:DrivesFor]-(d:Driver)
-        RETURN t,d
+        RETURN t,d, d.isFirstDriver = 'true' as isFirstDriver
+        ORDER BY isFirstDriver DESC
     `;
     logRGQuery(query);
     const queryResult = await graph.query(query);
@@ -12,8 +13,12 @@ const getTeamController = async (teamID) => {
 
     const team = queryResult._results[0]._values[0].properties;
     team.drivers = [];
-    team.drivers.push(queryResult._results[0]._values[1].properties);
-    team.drivers.push(queryResult._results[1]._values[1].properties);
+    const firstDriver = queryResult._results[0]._values[1].properties;
+    firstDriver.isFirstDriver = queryResult._results[0]._values[2];
+    const secondDriver = queryResult._results[1]._values[1].properties;
+    secondDriver.isFirstDriver = queryResult._results[1]._values[2];
+    team.drivers.push(firstDriver);
+    team.drivers.push(secondDriver);
     return team;
 };
 
