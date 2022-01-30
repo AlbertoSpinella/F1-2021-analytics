@@ -1,1 +1,8 @@
+### getGrandPrixWinners
 GET http://localhost:3000/queries/grandPrixWinner HTTP/1.1
+
+### getAllGrandChelems
+GET http://localhost:3000/queries/grandChelem HTTP/1.1
+
+### getGrandChelemDrivers
+GET http://localhost:3000/queries/grandChelemDrivers HTTP/1.1
