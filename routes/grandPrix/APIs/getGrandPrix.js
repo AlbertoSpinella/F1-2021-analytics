@@ -3,8 +3,9 @@ import { HTTPerror } from "../../../libs/errors.js";
 const getGrandPrixController = async (grandPrixID) => {
     const query = `
         MATCH (g:GrandPrix {id: '${grandPrixID}'})<-[r:RacedAt]-(d:Driver)
+        WITH r, g
+        ORDER BY r.position
         RETURN g, collect(r) AS r
-        
     `;
     logRGQuery(query);
     const queryResult = await graph.query(query);
@@ -16,10 +17,6 @@ const getGrandPrixController = async (grandPrixID) => {
     queryResult._results[0]._values[1].forEach(performance => {
         performances.push(performance.properties);
     });
-    performances.sort((a, b) => {
-        if (parseInt(a.position) > parseInt(b.position)) return 1;
-        return -1;
-     });
     grandPrix.performances = performances;
     grandPrix.date = new Date(parseInt(grandPrix.date));
     return grandPrix;

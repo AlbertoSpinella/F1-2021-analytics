@@ -27,6 +27,8 @@
 const getAllTeamsController = async () => {
     const query = `
         MATCH (t:Team)<-[r:DrivesFor]-(d:Driver)
+        WITH t, d
+        ORDER BY d.isFirstDriver DESC
         RETURN t, collect(d), collect(d.isFirstDriver = 'true') as isFirstDriver
         ORDER BY t.id
     `;
@@ -47,12 +49,6 @@ const getAllTeamsController = async () => {
         }
         teamData.drivers = drivers;
         teams.push(teamData);
-    });
-    teams.forEach(team => {
-        team.drivers.sort((a, b) => {
-            if (a.isFirstDriver == true) return -1;
-            return 1;
-        });
     });
     return teams;
 };

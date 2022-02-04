@@ -1,6 +1,8 @@
 const positionsGainedOrLosedPerGPController = async () => {
     const query = `
         MATCH (d:Driver)-[r:RacedAt]->(g:GrandPrix)
+        WITH d, r, g
+        ORDER BY g.date
         RETURN
         d,
         d.isFirstDriver = 'true' as isFirstDriver,
@@ -27,10 +29,6 @@ const positionsGainedOrLosedPerGPController = async () => {
             };
             performancesData.push(performanceData);
         }
-        performancesData.sort((a, b) => {
-            if (a.date < b.date) return -1;
-            return 1;
-        });
         driverData.performances = performancesData;
         drivers.push(driverData);
     });
