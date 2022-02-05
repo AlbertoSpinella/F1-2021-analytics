@@ -12,6 +12,8 @@ import { bestRacesByDriverIDService } from "./APIs/bestRacesByDriverID.js";
 import { worstRacesOfDriversService } from "./APIs/worstRacesOfDrivers.js";
 import { worstRacesByDriverIDService } from "./APIs/worstRacesByDriverID.js";
 import { allDriversAtPointsService } from "./APIs/allDriversAtPoints.js";
+import { getDriversStandingsService } from "./APIs/getDriversStandings.js";
+import { getTeamsStandingsService } from "./APIs/getTeamsStandings.js";
 
 export const getAllGrandPrixWinnersSchema = {
     schema: {
@@ -287,4 +289,42 @@ export const allDriversAtPointsSchema = {
         }
     },
     handler: allDriversAtPointsService
+};
+
+export const getDriversStandingsSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        name: { type: "string" },
+                        points: { type: "number" }
+                    }
+                }
+            }
+        }
+    },
+    handler: getDriversStandingsService
+};
+
+export const getTeamsStandingsSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        team: { type: "string" },
+                        points: { type: "number" }
+                    }
+                }
+            }
+        }
+    },
+    handler: getTeamsStandingsService
 };

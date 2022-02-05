@@ -39,3 +39,6 @@ GET http://localhost:3000/queries/worstRaces/Sainz HTTP/1.1
 
 ### allDriversAtPoints
 GET http://localhost:3000/queries/allDriversAtPoints HTTP/1.1
+
+### getDriversStandings
+GET http://localhost:3000/queries/standings/drivers HTTP/1.1

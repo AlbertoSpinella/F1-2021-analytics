@@ -7,10 +7,10 @@ const allDriversAtPointsController = async () => {
         RETURN DISTINCT driverName
     `;
     logRGQuery(query);
+    
+        const queryResult = await graph.query(query);
 
     const drivers = [];
-
-    const queryResult = await graph.query(query);
 
     queryResult._results.forEach(driver => {
         drivers.push(driver._values[0]);
