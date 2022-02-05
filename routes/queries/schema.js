@@ -5,6 +5,8 @@ import { getAllFastestLapsService } from "./APIs/getAllFastestLaps.js";
 import { positionsGainedOrLosedPerGPService } from "./APIs/positionsGainedOrLosedPerGP.js";
 import { positionsGainedOrLosedPerGPByDriverIDService } from "./APIs/positionsGainedOrLosedPerGPByDriverID.js";
 import { Driver, GrandPrix, paramsDriverID, responseRacedAt } from "../sharedSchemas.js";
+import { neverReachedQService } from "./APIs/neverReachedQ.js";
+import { qualifiedFirstService } from "./APIs/qualifiedFirst.js";
 
 export const getAllGrandPrixWinnersSchema = {
     schema: {
@@ -123,4 +125,56 @@ export const positionsGainedOrLosedPerGPByDriverIDSchema = {
         }
     },
     handler: positionsGainedOrLosedPerGPByDriverIDService
+};
+
+export const neverReachedQSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        params: {
+            type: "object",
+            required: ["Q"],
+            properties: {
+                Q: {
+                    type: "string",
+                    enum: ["Q2", "Q3"]
+                }
+            },
+            additionalProperties: false
+        },
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        driver: { type: "string" },
+                        bestQualified: { type: "number" }
+                    }
+                }
+            }
+        }
+    },
+    handler: neverReachedQService
+};
+
+export const qualifiedFirstSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        driverName: { type: "string" },
+                        GPs: {
+                            type: "array",
+                            items: { type: "string" }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    handler: qualifiedFirstService
 };

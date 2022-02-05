@@ -13,10 +13,11 @@ Visit localhost:8001 to view data. Set the following parameters:
 
 ```
 
+To start the server, run `npm run dev`. To create data from seeds, run `npm run seeds`.
+
+
 Query mancanti:
- - Dammi tutti i piloti che non sono mai arrivati in Q2
- - Dammi tutti i piloti che non sono mai arrivati in Q3
- - Dammi tutti i piloti che sono smepre andati a punti
+ - Dammi tutti i piloti che sono sempre andati a punti
  - Dammi soltanto le gare che hanno avuto qualifiche sprint
  - Dammi tutti i piloti che hanno vinto almeno un punto dalle qualifiche sprint
  - Dammi la classifica piloti
@@ -27,4 +28,6 @@ Query mancanti:
  - Per ogni pilota, dammi il numero sommato di tutte le posizioni guadagnate e perse
  - Per ogni gara, dammi la classifica piloti corrente
  - Per ogni gara, dammi la classifica costruttori corrente
+ - Dammi la classifica finale dei piloti se non ci fossero i punti delle sprint 
+ - Dammi la classifica finale dei costruttori se non ci fossero i punti delle sprint 
  - Nella getGP, ordinare per ordine di arrivo? Occorre guardare al momento com'è

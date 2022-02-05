@@ -15,3 +15,12 @@ GET http://localhost:3000/queries/positionsGainedOrLosedPerGP HTTP/1.1
 
 ### getPositionsGainedOrLosedPerGPByDriverID
 GET http://localhost:3000/queries/positionsGainedOrLosedPerGP/Leclerc HTTP/1.1
+
+### getNeverReachedQ2
+GET http://localhost:3000/queries/neverReached/Q2 HTTP/1.1
+
+### getNeverReachedQ3
+GET http://localhost:3000/queries/neverReached/Q3 HTTP/1.1
+
+### qualifiedFirst
+GET http://localhost:3000/queries/qualifiedFirst HTTP/1.1

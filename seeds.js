@@ -2816,7 +2816,7 @@ const racedAtMonza = [
 		position: 16,
 		points: 0,
 		fastestLap: false,
-		qualified: 14,
+		qualified: 17,
 		pointsFromSprint: 0
 	},
 	{
