@@ -1,12 +1,16 @@
 const getGrandChelemDriversController = async () => {
     const query = `
-        MATCH (d:Driver)-[r:RacedAt {position:'1',fastestLap:'true',qualified:'1'}]->(g:GrandPrix)
-        RETURN collect(d.id) as d
+        MATCH (d:Driver)-[r:RacedAt {position:1,fastestLap:'true',qualified:1}]->(g:GrandPrix)
+        RETURN DISTINCT d.id
     `;
     logRGQuery(query);
     const queryResult = await graph.query(query);
 
-    const drivers = [... new Set(queryResult._results[0]._values[0])];
+    const drivers = [];
+
+    queryResult._results.forEach(driver => {
+        drivers.push(driver._values[0]);
+    });
     return drivers;
 };
 

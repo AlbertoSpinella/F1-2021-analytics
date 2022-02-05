@@ -17,7 +17,6 @@ To start the server, run `npm run dev`. To create data from seeds, run `npm run 
 
 
 Query mancanti:
- - Dammi tutti i piloti che sono sempre andati a punti
  - Dammi soltanto le gare che hanno avuto qualifiche sprint
  - Dammi tutti i piloti che hanno vinto almeno un punto dalle qualifiche sprint
  - Dammi la classifica piloti
@@ -29,5 +28,5 @@ Query mancanti:
  - Per ogni gara, dammi la classifica piloti corrente
  - Per ogni gara, dammi la classifica costruttori corrente
  - Dammi la classifica finale dei piloti se non ci fossero i punti delle sprint 
- - Dammi la classifica finale dei costruttori se non ci fossero i punti delle sprint 
- - Nella getGP, ordinare per ordine di arrivo? Occorre guardare al momento com'è
+ - Dammi la classifica finale dei costruttori se non ci fossero i punti delle sprint
+ - Per ogni pilota, dammi la media delle posizioni di arrivo

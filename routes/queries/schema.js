@@ -7,6 +7,11 @@ import { positionsGainedOrLosedPerGPByDriverIDService } from "./APIs/positionsGa
 import { Driver, GrandPrix, paramsDriverID, responseRacedAt } from "../sharedSchemas.js";
 import { neverReachedQService } from "./APIs/neverReachedQ.js";
 import { qualifiedFirstService } from "./APIs/qualifiedFirst.js";
+import { bestRacesOfDriversService } from "./APIs/bestRacesOfDrivers.js";
+import { bestRacesByDriverIDService } from "./APIs/bestRacesByDriverID.js";
+import { worstRacesOfDriversService } from "./APIs/worstRacesOfDrivers.js";
+import { worstRacesByDriverIDService } from "./APIs/worstRacesByDriverID.js";
+import { allDriversAtPointsService } from "./APIs/allDriversAtPoints.js";
 
 export const getAllGrandPrixWinnersSchema = {
     schema: {
@@ -177,4 +182,109 @@ export const qualifiedFirstSchema = {
         }
     },
     handler: qualifiedFirstService
+};
+
+export const bestRacesOfDriversSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        driverName: { type: "string" },
+                        best: { type: "number" },
+                        count: { type: "number" },
+                        races: {
+                            type: "array",
+                            items: responseRacedAt
+                        }
+                    }
+                }
+            }
+        }
+    },
+    handler: bestRacesOfDriversService
+};
+
+export const bestRacesByDriverIDSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        params: paramsDriverID,
+        response: {
+            200: {
+                type: "object",
+                properties: {
+                    driverName: { type: "string" },
+                    best: { type: "number" },
+                    count: { type: "number" },
+                    races: {
+                        type: "array",
+                        items: responseRacedAt
+                    }
+                }
+            }
+        }
+    },
+    handler: bestRacesByDriverIDService
+};
+
+export const worstRacesOfDriversSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        driverName: { type: "string" },
+                        worst: { type: "number" },
+                        count: { type: "number" },
+                        races: {
+                            type: "array",
+                            items: responseRacedAt
+                        }
+                    }
+                }
+            }
+        }
+    },
+    handler: worstRacesOfDriversService
+};
+
+export const worstRacesByDriverIDSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        params: paramsDriverID,
+        response: {
+            200: {
+                type: "object",
+                properties: {
+                    driverName: { type: "string" },
+                    worst: { type: "number" },
+                    count: { type: "number" },
+                    races: {
+                        type: "array",
+                        items: responseRacedAt
+                    }
+                }
+            }
+        }
+    },
+    handler: worstRacesByDriverIDService
+};
+
+export const allDriversAtPointsSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        response: {
+            200: {
+                type: "array",
+                items: { type: "string" }
+            }
+        }
+    },
+    handler: allDriversAtPointsService
 };

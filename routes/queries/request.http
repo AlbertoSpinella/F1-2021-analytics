@@ -24,3 +24,18 @@ GET http://localhost:3000/queries/neverReached/Q3 HTTP/1.1
 
 ### qualifiedFirst
 GET http://localhost:3000/queries/qualifiedFirst HTTP/1.1
+
+### bestRacesOfDrivers
+GET http://localhost:3000/queries/bestRacesOfDrivers HTTP/1.1
+
+### bestRacesByDriverID
+GET http://localhost:3000/queries/bestRaces/Leclerc HTTP/1.1
+
+### worstRacesOfDrivers
+GET http://localhost:3000/queries/worstRacesOfDrivers HTTP/1.1
+
+### worstRacesByDriverID
+GET http://localhost:3000/queries/worstRaces/Sainz HTTP/1.1
+
+### allDriversAtPoints
+GET http://localhost:3000/queries/allDriversAtPoints HTTP/1.1
