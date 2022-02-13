@@ -13,7 +13,8 @@ import {
     worstRacesByDriverIDSchema,
     allDriversAtPointsSchema,
     getDriversStandingsSchema,
-    getTeamsStandingsSchema
+    getTeamsStandingsSchema,
+    getDriversStandingsByGrandPrixIDSchema
 } from "./schema.js";
 
 export const queriesPlugin = (fastify, options, done) => {
@@ -31,7 +32,11 @@ export const queriesPlugin = (fastify, options, done) => {
     fastify.get("/worstRaces/:driverID", worstRacesByDriverIDSchema); //for a d river, get his worst position and every races in which he arrived that position
     fastify.get("/allDriversAtPoints", allDriversAtPointsSchema); //get all drivers who scored points at every GP
 
-    fastify.get("/standings/drivers", getDriversStandingsSchema);
-    fastify.get("/standings/teams", getTeamsStandingsSchema);
+    fastify.get("/standings/drivers", getDriversStandingsSchema); //get the final drivers standings
+    fastify.get("/standings/teams", getTeamsStandingsSchema); //get the final teams standings
+
+    fastify.get("/standings/drivers/:grandPrixID", getDriversStandingsByGrandPrixIDSchema); //get the current driver standings by grandPrixID
+    // fastify.get("/standings/teams/:grandPrixID", getTeamsStandingsByGrandPrixIDSchema); //get the current teams standings by grandPrixID
+
     done();
 };

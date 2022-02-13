@@ -4,7 +4,7 @@ import { getGrandChelemDriversService } from "./APIs/getGrandChelemDrivers.js";
 import { getAllFastestLapsService } from "./APIs/getAllFastestLaps.js";
 import { positionsGainedOrLosedPerGPService } from "./APIs/positionsGainedOrLosedPerGP.js";
 import { positionsGainedOrLosedPerGPByDriverIDService } from "./APIs/positionsGainedOrLosedPerGPByDriverID.js";
-import { Driver, GrandPrix, paramsDriverID, responseRacedAt } from "../sharedSchemas.js";
+import { Driver, GrandPrix, paramsDriverID, paramsGrandPrixID, responseRacedAt } from "../sharedSchemas.js";
 import { neverReachedQService } from "./APIs/neverReachedQ.js";
 import { qualifiedFirstService } from "./APIs/qualifiedFirst.js";
 import { bestRacesOfDriversService } from "./APIs/bestRacesOfDrivers.js";
@@ -14,6 +14,7 @@ import { worstRacesByDriverIDService } from "./APIs/worstRacesByDriverID.js";
 import { allDriversAtPointsService } from "./APIs/allDriversAtPoints.js";
 import { getDriversStandingsService } from "./APIs/getDriversStandings.js";
 import { getTeamsStandingsService } from "./APIs/getTeamsStandings.js";
+import { getDriversStandingsByGrandPrixIDService } from "./APIs/getDriversStandingsByGrandPrixID.js";
 
 export const getAllGrandPrixWinnersSchema = {
     schema: {
@@ -329,4 +330,25 @@ export const getTeamsStandingsSchema = {
         }
     },
     handler: getTeamsStandingsService
+};
+
+export const getDriversStandingsByGrandPrixIDSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        params: paramsGrandPrixID,
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        name: { type: "string" },
+                        points: { type: "number" },
+                        position: { type: "number" }
+                    }
+                }
+            }
+        }
+    },
+    handler: getDriversStandingsByGrandPrixIDService
 };
