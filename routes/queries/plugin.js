@@ -14,7 +14,8 @@ import {
     allDriversAtPointsSchema,
     getDriversStandingsSchema,
     getTeamsStandingsSchema,
-    getDriversStandingsByGrandPrixIDSchema
+    getDriversStandingsByGrandPrixIDSchema,
+    getTeamsStandingsByGrandPrixIDSchema
 } from "./schema.js";
 
 export const queriesPlugin = (fastify, options, done) => {
@@ -36,7 +37,7 @@ export const queriesPlugin = (fastify, options, done) => {
     fastify.get("/standings/teams", getTeamsStandingsSchema); //get the final teams standings
 
     fastify.get("/standings/drivers/:grandPrixID", getDriversStandingsByGrandPrixIDSchema); //get the current driver standings by grandPrixID
-    // fastify.get("/standings/teams/:grandPrixID", getTeamsStandingsByGrandPrixIDSchema); //get the current teams standings by grandPrixID
+    fastify.get("/standings/teams/:grandPrixID", getTeamsStandingsByGrandPrixIDSchema); //get the current teams standings by grandPrixID
 
     done();
 };

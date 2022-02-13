@@ -15,6 +15,7 @@ import { allDriversAtPointsService } from "./APIs/allDriversAtPoints.js";
 import { getDriversStandingsService } from "./APIs/getDriversStandings.js";
 import { getTeamsStandingsService } from "./APIs/getTeamsStandings.js";
 import { getDriversStandingsByGrandPrixIDService } from "./APIs/getDriversStandingsByGrandPrixID.js";
+import { getTeamsStandingsByGrandPrixIDService } from "./APIs/getTeamsStandingsByGrandPrixID.js";
 
 export const getAllGrandPrixWinnersSchema = {
     schema: {
@@ -351,4 +352,25 @@ export const getDriversStandingsByGrandPrixIDSchema = {
         }
     },
     handler: getDriversStandingsByGrandPrixIDService
+};
+
+export const getTeamsStandingsByGrandPrixIDSchema = {
+    schema: {
+        tags: ["QUERIES"],
+        params: paramsGrandPrixID,
+        response: {
+            200: {
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        name: { type: "string" },
+                        points: { type: "number" },
+                        position: { type: "number" }
+                    }
+                }
+            }
+        }
+    },
+    handler: getTeamsStandingsByGrandPrixIDService
 };

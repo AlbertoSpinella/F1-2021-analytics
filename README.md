@@ -17,8 +17,6 @@ To start the server, run `npm run dev`. To create data from seeds, run `npm run 
 
 
 Query mancanti:
- - Per ogni gara, dammi la classifica piloti corrente
- - Per ogni gara, dammi la classifica costruttori corrente
  
  - Dammi le scuderie in cui il secondo pilota ha fatto più punti del primo
  - Per ogni scuderia, dammi le gare in cui il secondo pilota ha fatto più punti del primo
