@@ -17,7 +17,6 @@ To start the server, run `npm run dev`. To create data from seeds, run `npm run 
 
 
 Query mancanti:
- - Dammi la classifica costruttori
  - Per ogni gara, dammi la classifica piloti corrente
  - Per ogni gara, dammi la classifica costruttori corrente
  

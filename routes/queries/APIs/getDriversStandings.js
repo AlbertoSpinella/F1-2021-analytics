@@ -10,14 +10,16 @@ const getDriversStandingsController = async () => {
     const queryResult = await graph.query(query);
 
     const drivers = [];
+    let position = 1;
 
     queryResult._results.forEach(result => {
         const driver = {
             name: result._values[0],
-            points: result._values[1]
+            points: result._values[1],
+            position
         }
-        console.log(driver);
         drivers.push(driver);
+        position++;
     });
 
     return drivers;

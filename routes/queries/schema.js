@@ -301,7 +301,8 @@ export const getDriversStandingsSchema = {
                     type: "object",
                     properties: {
                         name: { type: "string" },
-                        points: { type: "number" }
+                        points: { type: "number" },
+                        position: { type: "number" }
                     }
                 }
             }
@@ -319,8 +320,9 @@ export const getTeamsStandingsSchema = {
                 items: {
                     type: "object",
                     properties: {
-                        team: { type: "string" },
-                        points: { type: "number" }
+                        name: { type: "string" },
+                        points: { type: "number" },
+                        position: { type: "number" }
                     }
                 }
             }
