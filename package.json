@@ -1,5 +1,5 @@
 {
-  "name": "F1-2021-analytics",
+  "name": "f1-2021-analytics",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,7 +11,8 @@
     "lint:fix": "eslint -c ./.eslintrc.cjs . --fix",
     "redis:start": "./scripts/redis_start.sh",
     "redis:stop": "./scripts/redis_stop.sh",
-    "seeds": "node seeds.js"
+    "seeds:2021": "node 2021-seeds.js",
+    "seeds:2022": "node 2022-seeds.js"
   },
   "author": "",
   "license": "ISC",

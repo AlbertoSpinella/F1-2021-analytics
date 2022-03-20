@@ -4157,6 +4157,7 @@ const racedAtAbuDhabi = [
 	}
 ];
 
+
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
 		const body = JSON.stringify(teams[i]);
@@ -4725,30 +4726,33 @@ const createRacedAtAbuDhabi = async () => {
 	};
 };
 
+const createRacedAt = async () => {
+	await createRacedAtManama();
+	await createRacedAtImola();
+	await createRacedAtPortimão();
+	await createRacedAtMontmeló();
+	await createRacedAtMonaco();
+	await createRacedAtBaku();
+	await createRacedAtLeCastellet();
+	await createRacedAtSpielberg_1();
+	await createRacedAtSpielberg_2();
+	await createRacedAtSilverstone();
+	await createRacedAtMogyoród();
+	await createRacedAtStavelot();
+	await createRacedAtZandvoort();
+	await createRacedAtMonza();
+	await createRacedAtSoči();
+	await createRacedAtTuzla();
+	await createRacedAtAustin();
+	await createRacedAtCiudaddeMéxico();
+	await createRacedAtSanPaolo();
+	await createRacedAtDoha();
+	await createRacedAtGedda();
+	await createRacedAtAbuDhabi();
+};
+
 await createTeams();
 await createDrivers();
 await createDrivesFor();
 await createAllGrandPrix();
-
-await createRacedAtManama();
-await createRacedAtImola();
-await createRacedAtPortimão();
-await createRacedAtMontmeló();
-await createRacedAtMonaco();
-await createRacedAtBaku();
-await createRacedAtLeCastellet();
-await createRacedAtSpielberg_1();
-await createRacedAtSpielberg_2();
-await createRacedAtSilverstone();
-await createRacedAtMogyoród();
-await createRacedAtStavelot();
-await createRacedAtZandvoort();
-await createRacedAtMonza();
-await createRacedAtSoči();
-await createRacedAtTuzla();
-await createRacedAtAustin();
-await createRacedAtCiudaddeMéxico();
-await createRacedAtSanPaolo();
-await createRacedAtDoha();
-await createRacedAtGedda();
-await createRacedAtAbuDhabi();
+await createRacedAt();

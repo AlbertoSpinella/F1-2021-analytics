@@ -1,6 +1,6 @@
 const getAllGrandChelemsController = async () => {
     const query = `
-        MATCH (d:Driver)-[r:RacedAt {position:'1',fastestLap:'true',qualified:'1'}]->(g:GrandPrix)
+        MATCH (d:Driver)-[r:RacedAt {position:1,fastestLap:'true',qualified:1}]->(g:GrandPrix)
         RETURN d,r,g, d.isFirstDriver = 'true' as isFirstDriver, r.fastestLap = 'true' as fastestLap
         ORDER BY g.date
     `;

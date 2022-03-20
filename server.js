@@ -7,6 +7,7 @@ const start = async () => {
     try {
         console.log(`Server starting...`);
         console.log(`Swagger can be found at http://localhost:${port}/docs`);
+        console.log("RedisInsight can be found at http://localhost:8001");
         await app.listen({ port, host });
     } catch (error) {
         console.log(error);
