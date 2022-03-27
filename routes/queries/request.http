@@ -49,5 +49,5 @@ GET http://localhost:3000/queries/standings/teams HTTP/1.1
 ### getDriversStandingsByGrandPrixID
 GET http://localhost:3000/queries/standings/drivers/Imola HTTP/1.1
 
-### getTeamsStandings
+### getTeamsStandingsByGrandPrixID
 GET http://localhost:3000/queries/standings/teams/Stavelot HTTP/1.1

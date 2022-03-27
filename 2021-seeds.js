@@ -559,7 +559,7 @@ const allGrandPrix = [
 		name: "STC Saudi Arabian Grand Prix",
 		circuit: "Jeddah Corniche Circuit",
 		nation: "ara",
-		city: "Gedda",
+		city: "Jeddah",
 		date: "12-05-2021"
 	},
 	{
@@ -3831,7 +3831,7 @@ const racedAtDoha = [
 	}
 ];
 
-const racedAtGedda = [
+const racedAtJeddah = [
 	{
 		driver: "Hamilton",
 		position: 1,
@@ -4680,18 +4680,18 @@ const createRacedAtDoha = async () => {
 	};
 };
 
-const createRacedAtGedda = async () => {
-	for (let i = 0; i < racedAtGedda.length; i++) {
+const createRacedAtJeddah = async () => {
+	for (let i = 0; i < racedAtJeddah.length; i++) {
 		const data = {
-			position: racedAtGedda[i].position,
-			points: racedAtGedda[i].points,
-			fastestLap: racedAtGedda[i].fastestLap,
-			qualified: racedAtGedda[i].qualified,
-			pointsFromSprint: racedAtGedda[i].pointsFromSprint
+			position: racedAtJeddah[i].position,
+			points: racedAtJeddah[i].points,
+			fastestLap: racedAtJeddah[i].fastestLap,
+			qualified: racedAtJeddah[i].qualified,
+			pointsFromSprint: racedAtJeddah[i].pointsFromSprint
 		};
 
 		const body = JSON.stringify(data);
-		const response = await fetch(`http://localhost:3000/relations/${racedAtGedda[i].driver}/racedAt/Gedda`, {
+		const response = await fetch(`http://localhost:3000/relations/${racedAtJeddah[i].driver}/racedAt/Jeddah`, {
 			method: "POST",
 			headers: {
 					"Content-Type": "application/json"
@@ -4747,7 +4747,7 @@ const createRacedAt = async () => {
 	await createRacedAtCiudaddeMéxico();
 	await createRacedAtSanPaolo();
 	await createRacedAtDoha();
-	await createRacedAtGedda();
+	await createRacedAtJeddah();
 	await createRacedAtAbuDhabi();
 };
 
