@@ -13,7 +13,9 @@ Visit localhost:8001 to view data. Set the following parameters:
 
 ```
 
-To start the server, run `npm run dev`. To create data from seeds, run `npm run seeds`.
+To start the server, run `npm run dev`. To create data from seeds:
+ - For 2021 data, run `npm run seeds:2021`
+ - For 2022 data, run `npm run seeds:2022`
 
 
 Query mancanti:

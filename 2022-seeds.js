@@ -428,6 +428,13 @@ const allGrandPrix = [
 		nation: "ara",
 		city: "Jeddah",
 		date: "03-27-2022"
+	},
+	{
+		name: "Australian Gran Prix",
+		circuit: "Albert Park Circuit",
+		nation: "aus",
+		city: "Melbourne",
+		date: "04-10-2022"
 	}
 ];
 
@@ -757,6 +764,169 @@ const racedAtJeddah = [
 	}
 ];
 
+const racedAtMelbourne = [
+	{
+		driver: "Leclerc",
+		position: 1,
+		points: 26,
+		fastestLap: true,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Albon",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Zhou",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Magnussen",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Verstappen",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	}
+];
+
 
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
@@ -866,9 +1036,33 @@ const createRacedAtJeddah = async () => {
 	};
 };
 
+const createRacedAtMelbourne = async () => {
+	for (let i = 0; i < racedAtMelbourne.length; i++) {
+		const data = {
+			position: racedAtMelbourne[i].position,
+			points: racedAtMelbourne[i].points,
+			fastestLap: racedAtMelbourne[i].fastestLap,
+			qualified: racedAtMelbourne[i].qualified,
+			pointsFromSprint: racedAtMelbourne[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtMelbourne[i].driver}/racedAt/Melbourne`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 const createRacedAt = async () => {
 	await createRacedAtManama();
 	await createRacedAtJeddah();
+	await createRacedAtMelbourne();
 };
 
 await createTeams();
