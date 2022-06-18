@@ -423,7 +423,7 @@ const allGrandPrix = [
 		date: "03-28-2021"
 	},
 	{
-		name: "Pirelli Gran Premio del Made in Italy e della Emilia Romagnaa",
+		name: "Pirelli Gran Premio del Made in Italy e della Emilia Romagna",
 		circuit: "Autodromo Enzo e Dino Ferrari",
 		nation: "ita",
 		city: "Imola",
