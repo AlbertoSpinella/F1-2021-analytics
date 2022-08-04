@@ -4164,7 +4164,7 @@ const createTeams = async () => {
 		const response = await fetch("http://localhost:3000/team", {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4179,7 +4179,7 @@ const createDrivers = async () => {
 		const response = await fetch("http://localhost:3000/driver", {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4196,7 +4196,7 @@ const createDrivesFor = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${drivesFor[i].driver}/drivesFor/${drivesFor[i].team}`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4211,7 +4211,7 @@ const createAllGrandPrix = async () => {
 		const response = await fetch("http://localhost:3000/grandPrix", {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4234,7 +4234,7 @@ const createRacedAtManama = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtManama[i].driver}/racedAt/Manama`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4257,7 +4257,7 @@ const createRacedAtImola = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtImola[i].driver}/racedAt/Imola`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4280,7 +4280,7 @@ const createRacedAtPortimão = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtPortimão[i].driver}/racedAt/Portimão`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4303,7 +4303,7 @@ const createRacedAtMontmeló = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtMontmeló[i].driver}/racedAt/Montmeló`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4326,7 +4326,7 @@ const createRacedAtMonaco = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtMonaco[i].driver}/racedAt/Monaco`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4349,7 +4349,7 @@ const createRacedAtBaku = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtBaku[i].driver}/racedAt/Baku`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4372,7 +4372,7 @@ const createRacedAtLeCastellet = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtLeCastellet[i].driver}/racedAt/Le%20Castellet`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4395,7 +4395,7 @@ const createRacedAtSpielberg_1 = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtSpielberg_1[i].driver}/racedAt/Spielberg_1`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4418,7 +4418,7 @@ const createRacedAtSpielberg_2 = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtSpielberg_2[i].driver}/racedAt/Spielberg_2`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4441,7 +4441,7 @@ const createRacedAtSilverstone = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtSilverstone[i].driver}/racedAt/Silverstone`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4464,7 +4464,7 @@ const createRacedAtMogyoród = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtMogyoród[i].driver}/racedAt/Mogyoród`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4487,7 +4487,7 @@ const createRacedAtStavelot = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtStavelot[i].driver}/racedAt/Stavelot`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4510,7 +4510,7 @@ const createRacedAtZandvoort = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtZandvoort[i].driver}/racedAt/Zandvoort`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4533,7 +4533,7 @@ const createRacedAtMonza = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtMonza[i].driver}/racedAt/Monza`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4556,7 +4556,7 @@ const createRacedAtSoči = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtSoči[i].driver}/racedAt/Soči`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4579,7 +4579,7 @@ const createRacedAtTuzla = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtTuzla[i].driver}/racedAt/Tuzla`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4602,7 +4602,7 @@ const createRacedAtAustin = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtAustin[i].driver}/racedAt/Austin`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4625,7 +4625,7 @@ const createRacedAtCiudaddeMéxico = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtCiudaddeMéxico[i].driver}/racedAt/Ciudad%20de%20México`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4648,7 +4648,7 @@ const createRacedAtSanPaolo = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtSanPaolo[i].driver}/racedAt/San%20Paolo`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4671,7 +4671,7 @@ const createRacedAtDoha = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtDoha[i].driver}/racedAt/Doha`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4694,7 +4694,7 @@ const createRacedAtJeddah = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtJeddah[i].driver}/racedAt/Jeddah`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
@@ -4717,7 +4717,7 @@ const createRacedAtAbuDhabi = async () => {
 		const response = await fetch(`http://localhost:3000/relations/${racedAtAbuDhabi[i].driver}/racedAt/Abu%20Dhabi`, {
 			method: "POST",
 			headers: {
-					"Content-Type": "application/json"
+				"Content-Type": "application/json"
 			},
 			body
 		});
