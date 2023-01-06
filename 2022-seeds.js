@@ -545,9 +545,16 @@ const allGrandPrix = [
 	{
 		name: "XXI Singapore Airlines Singapore Grand Prix",
 		circuit: "Singapore Street Circuit",
-		nation: "jap",
+		nation: "sin",
 		city: "Singapore",
 		date: "10-02-2022"
+	},
+	{
+		name: "XLVII Honda Japanese Grand Prix",
+		circuit: "Suzuka International Racing Course",
+		nation: "jap",
+		city: "Suzuka",
+		date: "10-09-2022"
 	}
 ];
 
@@ -3322,6 +3329,169 @@ const racedAtSingapore = [
 	}
 ];
 
+const racedAtSuzuka = [
+	{
+		driver: "Verstappen",
+		position: 1,
+		points: 25,
+		fastestLap: false,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Magnussen",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Zhou",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Albon",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	}
+];
+
 
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
@@ -3776,6 +3946,29 @@ const createRacedAtSingapore = async () => {
 	};
 };
 
+const createRacedAtSuzuka = async () => {
+	for (let i = 0; i < racedAtSuzuka.length; i++) {
+		const data = {
+			position: racedAtSuzuka[i].position,
+			points: racedAtSuzuka[i].points,
+			fastestLap: racedAtSuzuka[i].fastestLap,
+			qualified: racedAtSuzuka[i].qualified,
+			pointsFromSprint: racedAtSuzuka[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtSuzuka[i].driver}/racedAt/Suzuka`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 const createRacedAt = async () => {
 	await createRacedAtManama();
 	await createRacedAtJeddah();
@@ -3794,6 +3987,7 @@ const createRacedAt = async () => {
 	await createRacedAtZandvoort();
 	await createRacedAtMonza();
 	await createRacedAtSingapore();
+	await createRacedAtSuzuka();
 };
 
 await createTeams();
