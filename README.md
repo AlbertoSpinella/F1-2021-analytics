@@ -32,3 +32,8 @@ Query mancanti:
  - Dammi la classifica finale dei costruttori se non ci fossero i punti delle sprint
  - Dammi soltanto le gare che hanno avuto qualifiche sprint
  - Dammi tutti i piloti che hanno vinto almeno un punto dalle qualifiche sprint
+
+
+BUGS:
+
+l'API non funziona - /localhost:3000/queries/allDriversAtPoints

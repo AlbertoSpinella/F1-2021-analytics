@@ -576,6 +576,13 @@ const allGrandPrix = [
 		nation: "mex",
 		city: "Sao Paulo",
 		date: "11-13-2022"
+	},
+	{
+		name: "XIV Etihad Airways Abu Dhabi Grand Prix",
+		circuit: "Yas Marina Circuit",
+		nation: "eau",
+		city: "Abu Dhabi",
+		date: "11-20-2022"
 	}
 ];
 
@@ -4002,6 +4009,169 @@ const racedAtSaoPaulo = [
 	}
 ];
 
+const racedAtAbuDhabi = [
+	{
+		driver: "Verstappen",
+		position: 1,
+		points: 25,
+		fastestLap: false,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 6,
+		points: 9,
+		fastestLap: true,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Zhou",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Albon",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Magnussen",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	}
+];
+
 
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
@@ -4548,6 +4718,29 @@ const createRacedAtSaoPaulo = async () => {
 	};
 };
 
+const createRacedAtAbuDhabi = async () => {
+	for (let i = 0; i < racedAtSaoPaulo.length; i++) {
+		const data = {
+			position: racedAtAbuDhabi[i].position,
+			points: racedAtAbuDhabi[i].points,
+			fastestLap: racedAtAbuDhabi[i].fastestLap,
+			qualified: racedAtAbuDhabi[i].qualified,
+			pointsFromSprint: racedAtAbuDhabi[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtAbuDhabi[i].driver}/racedAt/Abu%20Dhabi`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 const createRacedAt = async () => {
 	await createRacedAtManama();
 	await createRacedAtJeddah();
@@ -4570,6 +4763,7 @@ const createRacedAt = async () => {
 	await createRacedAtAustin();
 	await createRacedAtCiudaddeMéxico();
 	await createRacedAtSaoPaulo();
+	await createRacedAtAbuDhabi();
 };
 
 await createTeams();
