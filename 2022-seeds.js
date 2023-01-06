@@ -564,11 +564,18 @@ const allGrandPrix = [
 		date: "10-23-2022"
 	},
 	{
-		name: "II Gran Premio de la Ciudad de México ",
+		name: "II Gran Premio de la Ciudad de México",
 		circuit: "Autodromo Hermanos Rodrígmex",
 		nation: "mex",
 		city: "Ciudad de México",
 		date: "10-30-2022"
+	},
+	{
+		name: "III Heineken Grande Prêmio de São Paulo",
+		circuit: "Autódromo José Carlos Pace",
+		nation: "mex",
+		city: "Sao Paulo",
+		date: "11-13-2022"
 	}
 ];
 
@@ -3832,6 +3839,169 @@ const racedAtCiudaddeMéxico = [
 	}
 ];
 
+const racedAtSaoPaulo = [
+	{
+		driver: "Russell",
+		position: 1,
+		points: 26,
+		fastestLap: true,
+		qualified: 1,
+		pointsFromSprint: 8
+	},
+	{
+		driver: "Hamilton",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 6
+	},
+	{
+		driver: "Sainz",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 2,
+		pointsFromSprint: 7
+	},
+	{
+		driver: "Leclerc",
+		position: 4,
+		points: 12,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 3
+	},
+	{
+		driver: "Alonso",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Verstappen",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 5
+	},
+	{
+		driver: "Perez",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 4
+	},
+	{
+		driver: "Ocon",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Zhou",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 13,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Albon",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 2
+	},
+	{
+		driver: "Magnussen",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 1
+	},
+	{
+		driver: "Ricciardo",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	}
+];
+
 
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
@@ -4355,6 +4525,29 @@ const createRacedAtCiudaddeMéxico = async () => {
 	};
 };
 
+const createRacedAtSaoPaulo = async () => {
+	for (let i = 0; i < racedAtSaoPaulo.length; i++) {
+		const data = {
+			position: racedAtSaoPaulo[i].position,
+			points: racedAtSaoPaulo[i].points,
+			fastestLap: racedAtSaoPaulo[i].fastestLap,
+			qualified: racedAtSaoPaulo[i].qualified,
+			pointsFromSprint: racedAtSaoPaulo[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtSaoPaulo[i].driver}/racedAt/Sao%20Paulo`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 const createRacedAt = async () => {
 	await createRacedAtManama();
 	await createRacedAtJeddah();
@@ -4376,6 +4569,7 @@ const createRacedAt = async () => {
 	await createRacedAtSuzuka();
 	await createRacedAtAustin();
 	await createRacedAtCiudaddeMéxico();
+	await createRacedAtSaoPaulo();
 };
 
 await createTeams();
