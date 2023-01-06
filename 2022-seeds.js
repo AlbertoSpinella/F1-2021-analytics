@@ -562,6 +562,13 @@ const allGrandPrix = [
 		nation: "usa",
 		city: "Austin",
 		date: "10-23-2022"
+	},
+	{
+		name: "II Gran Premio de la Ciudad de México ",
+		circuit: "Autodromo Hermanos Rodrígmex",
+		nation: "mex",
+		city: "Ciudad de México",
+		date: "10-30-2022"
 	}
 ];
 
@@ -3662,6 +3669,169 @@ const racedAtAustin = [
 	}
 ];
 
+const racedAtCiudaddeMéxico = [
+	{
+		driver: "Verstappen",
+		position: 1,
+		points: 25,
+		fastestLap: false,
+		qualified: 1,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Hamilton",
+		position: 2,
+		points: 18,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Perez",
+		position: 3,
+		points: 15,
+		fastestLap: false,
+		qualified: 4,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Russell",
+		position: 4,
+		points: 13,
+		fastestLap: true,
+		qualified: 2,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Sainz",
+		position: 5,
+		points: 10,
+		fastestLap: false,
+		qualified: 5,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Leclerc",
+		position: 6,
+		points: 8,
+		fastestLap: false,
+		qualified: 7,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ricciardo",
+		position: 7,
+		points: 6,
+		fastestLap: false,
+		qualified: 11,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Ocon",
+		position: 8,
+		points: 4,
+		fastestLap: false,
+		qualified: 10,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Norris",
+		position: 9,
+		points: 2,
+		fastestLap: false,
+		qualified: 8,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Bottas",
+		position: 10,
+		points: 1,
+		fastestLap: false,
+		qualified: 6,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Gasly",
+		position: 11,
+		points: 0,
+		fastestLap: false,
+		qualified: 14,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Albon",
+		position: 12,
+		points: 0,
+		fastestLap: false,
+		qualified: 19,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Zhou",
+		position: 13,
+		points: 0,
+		fastestLap: false,
+		qualified: 12,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Vettel",
+		position: 14,
+		points: 0,
+		fastestLap: false,
+		qualified: 17,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Stroll",
+		position: 15,
+		points: 0,
+		fastestLap: false,
+		qualified: 18,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Schumacher",
+		position: 16,
+		points: 0,
+		fastestLap: false,
+		qualified: 16,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Magnussen",
+		position: 17,
+		points: 0,
+		fastestLap: false,
+		qualified: 15,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Latifi",
+		position: 18,
+		points: 0,
+		fastestLap: false,
+		qualified: 20,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Alonso",
+		position: 19,
+		points: 0,
+		fastestLap: false,
+		qualified: 9,
+		pointsFromSprint: 0
+	},
+	{
+		driver: "Tsunoda",
+		position: 20,
+		points: 0,
+		fastestLap: false,
+		qualified: 3,
+		pointsFromSprint: 0
+	}
+];
+
 
 const createTeams = async () => {
 	for (let i = 0; i < teams.length; i++) {
@@ -4162,6 +4332,29 @@ const createRacedAtAustin = async () => {
 	};
 };
 
+const createRacedAtCiudaddeMéxico = async () => {
+	for (let i = 0; i < racedAtCiudaddeMéxico.length; i++) {
+		const data = {
+			position: racedAtCiudaddeMéxico[i].position,
+			points: racedAtCiudaddeMéxico[i].points,
+			fastestLap: racedAtCiudaddeMéxico[i].fastestLap,
+			qualified: racedAtCiudaddeMéxico[i].qualified,
+			pointsFromSprint: racedAtCiudaddeMéxico[i].pointsFromSprint
+		};
+
+		const body = JSON.stringify(data);
+		const response = await fetch(`http://localhost:3000/relations/${racedAtCiudaddeMéxico[i].driver}/racedAt/Ciudad%20de%20México`, {
+			method: "POST",
+			headers: {
+					"Content-Type": "application/json"
+			},
+			body
+		});
+		const result = await response.json();
+		console.log(result);
+	};
+};
+
 const createRacedAt = async () => {
 	await createRacedAtManama();
 	await createRacedAtJeddah();
@@ -4182,6 +4375,7 @@ const createRacedAt = async () => {
 	await createRacedAtSingapore();
 	await createRacedAtSuzuka();
 	await createRacedAtAustin();
+	await createRacedAtCiudaddeMéxico();
 };
 
 await createTeams();
