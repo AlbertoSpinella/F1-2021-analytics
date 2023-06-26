@@ -1,5 +1,6 @@
 # F1 2021 analytics
 
+This project is just for fun and it's not completed (nor updated).
 Once cloned the repo, run the following commands to setup redis:
 ```bash
 npm ci
